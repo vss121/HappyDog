@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Threading.Tasks;
 
 namespace OpenAI
 {
@@ -9,11 +9,11 @@ namespace OpenAI
     {
         private OpenAIApi openai = new OpenAIApi();
         private List<ChatMessage> messages = new List<ChatMessage>();
-        private string prompt = "Act as a random stranger in a chat room and reply to the questions. Don't break character. Don't ever mention that you are an AI model.";
-        public string sentMessage = "Hi";   // temp
+        private string prompt = "You are a puppy. The opponent is your owner who is suffering from depression. You should comfort your master and help him overcome his depression. Always be kind in a chat room and reply to the questions. Don't break character. Don't ever mention that you are an AI model. Always say 'woof woof' before and after the conversation";
+        // public string sentMessage = "Hi";   // temp
         public string receivedMessage = "receivedMessage";
 
-        public async void SendReply()
+        public async Task SendReply(string sentMessage)
         {
             var newMessage = new ChatMessage()
             {
@@ -45,9 +45,9 @@ namespace OpenAI
 
                 
                 
-                this.receivedMessage = message.Content;  // 변수 저장
-                Debug.Log("receivedMessage------"+receivedMessage); // 잘 작동
-                Debug.Log("this.receivedMessage------" + this.receivedMessage); // 잘 작동
+                receivedMessage = message.Content;  // 변수 저장
+                //Debug.Log("receivedMessage------"+receivedMessage); // 잘 작동
+                //Debug.Log("this.receivedMessage------" + this.receivedMessage); // 잘 작동
                 messages.Add(message);
                 Debug.Log(messages.Count);
                 //AppendMessage(message);

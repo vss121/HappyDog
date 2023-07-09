@@ -37,7 +37,7 @@ public class ChatManager : MonoBehaviour
     }
 
     // enter키나 버튼으로 전송
-    public void UpdateChat()
+    public async void UpdateChat()
     {
         string text = inputField.text;
 
@@ -54,12 +54,12 @@ public class ChatManager : MonoBehaviour
         // ChatGPT
         GameObject obj = GameObject.Find("ChatGPTManager");
         //Debug.Log(obj.GetComponent<OpenAI.ChatGpt>());
-        obj.GetComponent<OpenAI.ChatGpt>().SendReply();
+        await obj.GetComponent<OpenAI.ChatGpt>().SendReply(text);
         String gptMsg;
         gptMsg = obj.GetComponent<OpenAI.ChatGpt>().receivedMessage;
         Debug.Log("ChatManager.cs----------"+gptMsg);
         Chat(false, gptMsg, "타인", null);
-
+        Debug.Log("end");
 
     }
 
