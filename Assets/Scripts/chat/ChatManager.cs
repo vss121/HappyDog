@@ -47,6 +47,20 @@ public class ChatManager : MonoBehaviour
         // Chat(false, text, "타인", null);
 
         inputField.text = "";   // inputField 내용 초기화
+
+
+
+
+        // ChatGPT
+        GameObject obj = GameObject.Find("ChatGPTManager");
+        //Debug.Log(obj.GetComponent<OpenAI.ChatGpt>());
+        obj.GetComponent<OpenAI.ChatGpt>().SendReply();
+        String gptMsg;
+        gptMsg = obj.GetComponent<OpenAI.ChatGpt>().receivedMessage;
+        Debug.Log("ChatManager.cs----------"+gptMsg);
+        Chat(false, gptMsg, "타인", null);
+
+
     }
 
 
