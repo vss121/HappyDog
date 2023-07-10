@@ -8,14 +8,12 @@ using TMPro;
 
 public class ChatManager : MonoBehaviour
 {
-    public GameObject YellowArea, WhiteArea, DateArea;
+    public GameObject YellowArea, WhiteArea;
     public RectTransform ContentRect;
     public Scrollbar scrollBar;
-    public Toggle MineToggle;
     public TMP_InputField inputField;  // 문자 입력창
     AreaScript LastArea;
-
-    TouchScreenKeyboard keyboard;   
+  
 
     // Update is called once per frame
     void Update()
@@ -29,7 +27,7 @@ public class ChatManager : MonoBehaviour
 
     public void OnEndEditEventMethod()
     {
-        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+        
         if (Input.GetKeyDown(KeyCode.Return))
         {
             UpdateChat();
@@ -48,18 +46,15 @@ public class ChatManager : MonoBehaviour
 
         inputField.text = "";   // inputField 내용 초기화
 
-
-
-
         // ChatGPT
         GameObject obj = GameObject.Find("ChatGPTManager");
         //Debug.Log(obj.GetComponent<OpenAI.ChatGpt>());
         await obj.GetComponent<OpenAI.ChatGpt>().SendReply(text);
         String gptMsg;
         gptMsg = obj.GetComponent<OpenAI.ChatGpt>().receivedMessage;
-        Debug.Log("ChatManager.cs----------"+gptMsg);
-        Chat(false, gptMsg, "타인", null);
-        Debug.Log("end");
+        Debug.Log("ChatManager.cs : "+gptMsg);
+        Chat(false, gptMsg, "{puppy name}", null);
+        //Debug.Log("ChatManager.cs : end");
 
     }
 
@@ -72,7 +67,7 @@ public class ChatManager : MonoBehaviour
         bool isBottom = scrollBar.value <= 0.00001f;
 
 
-        // 노랑, 흰색영역을 만들고 텍스트 대입
+        // 채팅 박스 영역을 만들고 텍스트 대입
         AreaScript Area = Instantiate(isSend ? YellowArea : WhiteArea).GetComponent<AreaScript>();
         Area.transform.SetParent(ContentRect.transform, false);
         Area.BoxRect.sizeDelta = new Vector2(800, Area.BoxRect.sizeDelta.y);    // 박스 최대 크기
@@ -109,19 +104,18 @@ public class ChatManager : MonoBehaviour
         Area.TimeText.text =  hour + ":" + t.Minute.ToString("D2") + (t.Hour > 12 ? " PM " : " AM ") ;
 
 
-        // 이전과 같을 경우
-        bool isSame = LastArea != null && LastArea.Time == Area.Time && LastArea.User == Area.User;
-        if (isSame) LastArea.TimeText.text = "";
-        Area.Tail.SetActive(!isSame);
+
+        Area.Tail.SetActive(true);
 
 
-        // 이전과 같을 경우 (상대)
+        // ChatGPT가 보내는 부분
         if (!isSend)
         {
-            Area.UserImage.gameObject.SetActive(!isSame);
-            Area.UserText.gameObject.SetActive(!isSame);
+            Area.UserImage.gameObject.SetActive(true);
+            Area.UserText.gameObject.SetActive(true);
             Area.UserText.text = Area.User;
             if (picture != null) Area.UserImage.sprite = Sprite.Create(picture, new Rect(0, 0, picture.width, picture.height), new Vector2(0.5f, 0.5f));
+            Invoke("ScrollDelay", 0.03f);
         }
 
 
@@ -132,7 +126,7 @@ public class ChatManager : MonoBehaviour
         LastArea = Area;
 
 
-        // 스크롤바가 맨 아래로 내리기
+        // 스크롤바 맨 아래로 내리기
         Invoke("ScrollDelay", 0.03f);
     }
 
