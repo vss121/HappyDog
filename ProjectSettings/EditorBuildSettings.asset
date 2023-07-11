@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 773dd10104a265b47ab4ccbbfccc108d
+  - enabled: 1
+    path: Assets/Scenes/ChatScene.unity
+    guid: 49a583ec511b3054fbc464851c182dc4
+  - enabled: 1
+    path: Assets/Scenes/CollectionScene.unity
+    guid: 9cfee94a89e1a14439b7ab78124ff75a
+  - enabled: 1
+    path: Assets/Scenes/ShowerScene.unity
+    guid: 2a3c5b0277a315544a6ee25887ffc361
   m_configObjects: {}
