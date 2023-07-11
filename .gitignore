@@ -1,3 +1,8 @@
+# Backend folder 관련
+Backend/database.json
+Backend/node_modules/
+
+
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
