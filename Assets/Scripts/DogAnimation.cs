@@ -1,25 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
+using Unity.VisualScripting;
+using Unity.UI;
+using UnityEngine.UI;
 
 public class DogAnimation : MonoBehaviour
 {
-    public Animator anim;
+    public GameObject Dog1;
+    public GameObject Dog2;
+    public bool otherAnim;
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        otherAnim = false;
+        Dog1.SetActive(true);
+        Dog2.SetActive(false);
+    }
+    public void Update()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            StartCoroutine(PlayOtherAnimation());
+        }
     }
 
-    private void OnMouseDown()
+    private IEnumerator PlayOtherAnimation()
     {
-        Debug.Log("여기에 마우스 클릭됨");
-        if (anim.GetBool("IsTouched") == false) 
-        {
-            anim.SetBool("IsTouched", true);
-            Debug.Log(anim.GetBool("IsTouched"));
-        }
-        else if(anim.GetBool("IsTouched") == true){
-            anim.SetBool("IsTouched", false);
-        }
+        otherAnim = true;
+        Dog2.SetActive(true);
+        Dog1.SetActive(false);
+        yield return new WaitForSeconds(2.0f);
+        Dog1.SetActive(true);
+        Dog2.SetActive(false);
+        otherAnim = false;
     }
 }
