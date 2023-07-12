@@ -8,4 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 773dd10104a265b47ab4ccbbfccc108d
+  - enabled: 1
+    path: Assets/Scenes/ChatScene.unity
+    guid: 49a583ec511b3054fbc464851c182dc4
+  - enabled: 1
+    path: Assets/Scenes/CollectionScene.unity
+    guid: 9cfee94a89e1a14439b7ab78124ff75a
+  - enabled: 1
+    path: Assets/Scenes/ShowerScene.unity
+    guid: 2a3c5b0277a315544a6ee25887ffc361
+  - enabled: 1
+    path: Assets/Scenes/DepressionScene.unity
+    guid: 4635480d1b8a1ef41b7db5149e5d89ba
+  - enabled: 1
+    path: Assets/Scenes/FeedScene.unity
+    guid: c75dd6c671dd74348bc0efcb3cb3f45c
+  - enabled: 1
+    path: Assets/Scenes/StoreScene.unity
+    guid: fd1c16cc356c619469bfd02f39048abd
   m_configObjects: {}
