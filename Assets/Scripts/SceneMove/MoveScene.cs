@@ -33,4 +33,9 @@ public class MoveScene : MonoBehaviour
     {
         SceneManager.LoadScene("FeedScene");
     }
+    public void GotoSetting()
+    {
+        SceneManager.LoadScene("SettingScene");
+    }
+
 }
