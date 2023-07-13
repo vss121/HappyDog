@@ -5,37 +5,41 @@ using UnityEngine.SceneManagement;
 
 public class MoveScene : MonoBehaviour
 {
+    public GameObject SceneObject;
+    public SceneChangeEffect SceneChange;
     public void GotoChat()
     {
-        SceneManager.LoadScene("ChatScene");
+        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "ChatScene";
+        SceneChange.StartFade();
     }
     public void GotoCollection()
     {
-        SceneManager.LoadScene("CollectionScene");
+        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "CollectionScene";
+        SceneChange.StartFade();
     }
     public void GotoMain()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "MainScene";
+        SceneChange.StartFade();
     }
     public void GotoDepression()
     {
-        SceneManager.LoadScene("DepressionScene");
+        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "DepressionScene";
+        SceneChange.StartFade();
     }
     public void GotoStore()
     {
-        SceneManager.LoadScene("StoreScene");
+        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "StoreScene";
+        SceneChange.StartFade();
     }
     public void GotoShower()
     {
-        SceneManager.LoadScene("ShowerScene");
+        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "ShowerScene";
+        SceneChange.StartFade();
     }
     public void GotoFeed()
     {
-        SceneManager.LoadScene("FeedScene");
+        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "FeedScene";
+        SceneChange.StartFade();
     }
-    public void GotoSetting()
-    {
-        SceneManager.LoadScene("SettingScene");
-    }
-
 }
