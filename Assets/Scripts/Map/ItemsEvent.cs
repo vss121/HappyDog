@@ -1,67 +1,126 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Mapbox.Examples;
+    using Mapbox.Examples;
 using Mapbox.Utils;
-namespace System.Device
+using System;
+using UnityEngine;
+
+public class ItemsEvent : MonoBehaviour
 {
+    [SerializeField] float rotationSpeed = 50f;
+    // [SerializeField] float amplitude = 2.0f;
+    // [SerializeField] float frequency = 0.50f;
 
-    public class ItemsEvent : MonoBehaviour
+    LocationStatus playerLocation;
+    public Vector2d eventPos;
+
+    MenuUIManager menuUIManager;
+    private void Start()
     {
-        [SerializeField] float rotationSpeed = 50f;
-        // [SerializeField] float amplitude = 2.0f;
-        // [SerializeField] float frequency = 0.50f;
+        menuUIManager = GameObject.Find("MiddlePanel").GetComponent<MenuUIManager>();
+    }
 
-        LocationStatus playerLocation;
-        public Vector2d eventPos;
+    // Update is called once per frame
+    void Update()
+    {
+        FloatAndRotatePointer();
+        ListenInput();
+    }
 
-        // Update is called once per frame
-        void Update()
+    private void FloatAndRotatePointer()
+    {
+        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        //transform.position= new Vector3(transform.position.x,(Mathf.Sin(Time.fixedTime*Mathf.PI*frequency)*amplitude)+15, transform.position.z );
+    }
+
+    public static double DistanceTo(double lat1, double lon1, double lat2, double lon2)
+    {
+        double rlat1 = Math.PI * lat1 / 180;
+        double rlat2 = Math.PI * lat2 / 180;
+        double theta = lon1 - lon2;
+        double rtheta = Math.PI * theta / 180;
+        double dist =
+            Math.Sin(rlat1) * Math.Sin(rlat2) + Math.Cos(rlat1) *
+            Math.Cos(rlat2) * Math.Cos(rtheta);
+        dist = Math.Acos(dist);
+        dist = dist * 180 / Math.PI;
+        dist = dist * 60 * 1.1515;
+
+        return dist * 1.609344;
+    }
+
+
+    private void ListenInput()  // touch시와 click시 
+    {
+
+        if (Input.touchCount > 0)
         {
-            FloatAndRotatePointer();
-        }
+            // 터치 입력 시,
+            Touch touch = Input.GetTouch(0);       // only touch 0 is used
 
-        private void FloatAndRotatePointer()
-        {
-            transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
-            //transform.position= new Vector3(transform.position.x,(Mathf.Sin(Time.fixedTime*Mathf.PI*frequency)*amplitude)+15, transform.position.z );
-        }
-
-        public static double DistanceTo(double lat1, double lon1, double lat2, double lon2, char unit = 'K')
-        {
-            double rlat1 = Math.PI * lat1 / 180;
-            double rlat2 = Math.PI * lat2 / 180;
-            double theta = lon1 - lon2;
-            double rtheta = Math.PI * theta / 180;
-            double dist =
-                Math.Sin(rlat1) * Math.Sin(rlat2) + Math.Cos(rlat1) *
-                Math.Cos(rlat2) * Math.Cos(rtheta);
-            dist = Math.Acos(dist);
-            dist = dist * 180 / Math.PI;
-            dist = dist * 60 * 1.1515;
-
-            switch (unit)
+            if (touch.phase == TouchPhase.Ended)
             {
-                case 'K': //Kilometers -> default
-                    return dist * 1.609344;
-                case 'N': //Nautical Miles 
-                    return dist * 0.8684;
-                case 'M': //Miles
-                    return dist;
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.collider == GetComponent<BoxCollider>())
+                    {
+                        // 실행할 event
+
+                        playerLocation = GameObject.Find("Canvas").GetComponent<LocationStatus>();
+                        //var currentPlayerLocation = new GeoCoordinate(playerLocation.GetLocationLat(), playerLocation.GetLocationLon());
+                        //var eventLocation = new GeoCoordinate(eventPos[0], eventPos[1]);
+                        var distance = DistanceTo(playerLocation.GetLocationLat(), playerLocation.GetLocationLon(), eventPos[0], eventPos[1]);  // distance calculation
+                                                                                                                                                //Debug.Log(distance + "km");
+
+
+                        if (distance < 0.05)    // 50m 이내라면
+                        {
+                            menuUIManager.DisplayUserInRangePanel();
+                        }
+                        else
+                        {
+                            menuUIManager.DisplayUserNotInRangePanel();
+                        }
+                    }
+                }
             }
 
-            return dist;
+
         }
-
-
-        private void OnMouseDown()
+        else if (Input.GetMouseButtonUp(0))
         {
-            playerLocation = GameObject.Find("Canvas").GetComponent<LocationStatus>();
-            //var currentPlayerLocation = new GeoCoordinate(playerLocation.GetLocationLat(), playerLocation.GetLocationLon());
-            //var eventLocation = new GeoCoordinate(eventPos[0], eventPos[1]);
-            var distance = DistanceTo(playerLocation.GetLocationLat(), playerLocation.GetLocationLon(), eventPos[0], eventPos[1]);  // distance calculation
-            Debug.Log(distance);
-            Debug.Log("Clicked");
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider == GetComponent<BoxCollider>())
+                {
+                    // 실행할 event
+
+                    playerLocation = GameObject.Find("Canvas").GetComponent<LocationStatus>();
+                    //var currentPlayerLocation = new GeoCoordinate(playerLocation.GetLocationLat(), playerLocation.GetLocationLon());
+                    //var eventLocation = new GeoCoordinate(eventPos[0], eventPos[1]);
+                    var distance = DistanceTo(playerLocation.GetLocationLat(), playerLocation.GetLocationLon(), eventPos[0], eventPos[1]);  // distance calculation
+                    Debug.Log(distance + "km");
+
+
+                    if (distance < 0.05)    // 50m 이내라면
+                    {
+                        menuUIManager.DisplayUserInRangePanel();
+                    }
+                    else
+                    {
+                        menuUIManager.DisplayUserNotInRangePanel();
+                    }
+                }
+
+            }
         }
+
+
+
+
+
+
     }
 }
