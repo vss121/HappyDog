@@ -1,39 +1,77 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class WalkTime : MonoBehaviour
 {
 
-    // [SerializeField] float timeStart;
-    // public TextMeshProUGUI TimeText;
-    // // [SerializeField] TextMeshProUGUI StartPauseImg;
+    //[SerializeField] float timeStart;
+    [SerializeField] TextMeshProUGUI timeText;
+    // [SerializeField] TextMeshProUGUI StartPauseImg;
 
-    // bool timeActive = false;
+    bool timeActive = false;
 
-    // // Start is called before the first frame update
-    // void Start()
-    // {
-    //     TimeText.text = timeStart.ToString("F2");
-    // }
+    // 시간 text 관련
+    private float secondsCount;
+    private int minuteCount;
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
+    // 버튼 이미지 관련
+    public Sprite startImg;
+    public Sprite pauseImg;
+    Image imgLocation;
 
-    // void StartTime()
-    // {
-    //     if (timeActive) {
-    //         timeStart+=Time.deltaTime;
-    //         TimeText.text=timeStart.ToString("F2");
-    //     }
-    // }
+    // Start is called before the first frame update
+    void Start()
+    {
+        //timeText.text = timeStart.ToString("F2");
+        imgLocation = GameObject.Find("StartPauseButton").GetComponent<Image>();
+        StartPauseBtn();
+    }
 
-    // public void StartPauseBtn()
-    // {
-    //     timeActive=!timeActive;
-    //     //StartPauseImg.imt = timeActive? "정지이미지" : "START이미지";
-    // }
+    // Update is called once per frame
+    void Update()
+    {
+        StartTime();
+    }
+
+    void StartTime()
+    {
+        if (timeActive)
+        {
+            secondsCount += Time.deltaTime;
+            timeText.text =minuteCount+":"+(int)secondsCount;
+            if (secondsCount >= 60)
+            {
+                minuteCount++;
+                secondsCount = 0;
+            }
+        }
+    }
+
+
+    public void StartPauseBtn()
+    {
+        timeActive = !timeActive;
+
+        imgLocation.sprite = timeActive ? pauseImg : startImg;
+    }
+
+    public void ResetBtn()
+    {
+        timeActive = false;
+        if (!timeActive)
+        {
+            
+            imgLocation.sprite = startImg;
+        }
+        if (secondsCount > 0)
+        {
+            secondsCount = 0;
+            minuteCount = 0;
+            timeText.text = minuteCount + ":" + (int)secondsCount;
+            
+        }
+    }
 }

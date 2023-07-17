@@ -13,8 +13,12 @@ public class ItemsEvent : MonoBehaviour
     public Vector2d eventPos;
 
     MenuUIManager menuUIManager;
+
+    public bool isClicked;
+
     private void Start()
     {
+        isClicked = false;
         menuUIManager = GameObject.Find("MiddlePanel").GetComponent<MenuUIManager>();
     }
 
@@ -75,7 +79,16 @@ public class ItemsEvent : MonoBehaviour
 
                         if (distance < 0.05)    // 50m 이내라면
                         {
-                            menuUIManager.DisplayUserInRangePanel();
+                            if(!isClicked)
+                            {
+                                menuUIManager.DisplayUserInRangePanel();
+                                isClicked = true;
+                            }
+                            else
+                            {
+                                menuUIManager.DisplayClickedPanel();
+                            }
+                            
                         }
                         else
                         {
@@ -106,7 +119,16 @@ public class ItemsEvent : MonoBehaviour
 
                     if (distance < 0.05)    // 50m 이내라면
                     {
-                        menuUIManager.DisplayUserInRangePanel();
+                        if (!isClicked)
+                        {
+                            menuUIManager.DisplayUserInRangePanel();
+                            isClicked = true;
+                        }
+                        else
+                        {
+                            menuUIManager.DisplayClickedPanel();
+                        }
+
                     }
                     else
                     {

@@ -28,7 +28,7 @@
 		void Update()
 		{
 			currLoc = _locationProvider.CurrentLocation;
-
+			/*
 			if (currLoc.IsLocationServiceInitializing)
 			{
 				_statusText.text = "location services are initializing";
@@ -50,7 +50,7 @@
 						_statusText.text = string.Format("{0}", currLoc.LatitudeLongitude);
 					}
 				}
-			}
+			} */
 
 		}
 

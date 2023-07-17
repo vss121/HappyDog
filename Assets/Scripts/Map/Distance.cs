@@ -54,7 +54,7 @@ public class Distance : MonoBehaviour
                     totalDistance += currDistance;
                     //Debug.Log(currDistance);
                     distanceText.text = string.Format("{0:F2}", totalDistance);
-                    Debug.Log("totalDistance : " + totalDistance);
+                    //Debug.Log("totalDistance : " + totalDistance);
                 }
                 
             }
