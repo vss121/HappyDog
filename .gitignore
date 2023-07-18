@@ -2,6 +2,9 @@
 Backend/database.json
 Backend/node_modules/
 
+# Mapbox key 관련
+Assets/Resources/Mapbox/MapboxConfiguration.txt
+user.keystore
 
 # This .gitignore file should be placed at the root of your Unity project directory
 #

@@ -809,7 +809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   YellowArea: {fileID: 6869814929568415581, guid: b8216df7d8cbf0040bea5ed6684562d4, type: 3}
-  WhiteArea: {fileID: 2523516203172864094, guid: 4d4590082c3966246bed98af0f51f891, type: 3}
+  WhiteArea: {fileID: 6275260057658881042, guid: 4d4590082c3966246bed98af0f51f891, type: 3}
   ContentRect: {fileID: 2010184491}
   scrollBar: {fileID: 1979546148}
   inputField: {fileID: 1593959407}
