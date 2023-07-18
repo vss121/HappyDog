@@ -13,7 +13,7 @@ public class ChatManager : MonoBehaviour
     public Scrollbar scrollBar;
     public TMP_InputField inputField;  // 문자 입력창
     AreaScript LastArea;
-  
+
 
     // Update is called once per frame
     void Update()
@@ -71,7 +71,7 @@ public class ChatManager : MonoBehaviour
         AreaScript Area = Instantiate(isSend ? YellowArea : WhiteArea).GetComponent<AreaScript>();
         Area.transform.SetParent(ContentRect.transform, false);
         Area.BoxRect.sizeDelta = new Vector2(800, Area.BoxRect.sizeDelta.y);    // 박스 최대 크기
-        Area.TextRect.GetComponent<Text>().text = text;
+        Area.TextRect.GetComponent<TMP_Text>().text = text;
         Fit(Area.BoxRect);
 
 
