@@ -8,31 +8,37 @@ using UnityEngine.UI;
 
 public class DogAnimation : MonoBehaviour
 {
-    public GameObject Dog1;
-    public GameObject Dog2;
-    public bool otherAnim;
-    private void Awake()
+    public Animator anim;
+    public Vector2 mousePos;
+    private void Start()
     {
-        otherAnim = false;
-        Dog1.SetActive(true);
-        Dog2.SetActive(false);
+        anim.SetBool("isTouched", false);
     }
     public void Update()
     {
         if (Input.GetMouseButton(0))
         {
-            StartCoroutine(PlayOtherAnimation());
+            mousePos = Input.mousePosition;
+        }
+        Vector2 pos = Camera.main.ScreenToWorldPoint(mousePos);
+        RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+        if (hit.collider != null)
+        {
+            Debug.Log(hit.collider.name);
+            if (hit.collider.name == "Dog")
+            {
+                Debug.Log("µð¹ö±ë 00 " + anim.GetBool("isTouched"));
+                anim.SetBool("isTouched", true);
+                Debug.Log("µð¹ö±ë 11 " + anim.GetBool("isTouched"));
+                StartCoroutine(WaitForSec());
+            }
         }
     }
 
-    private IEnumerator PlayOtherAnimation()
+    private IEnumerator WaitForSec()
     {
-        otherAnim = true;
-        Dog2.SetActive(true);
-        Dog1.SetActive(false);
         yield return new WaitForSeconds(2.0f);
-        Dog1.SetActive(true);
-        Dog2.SetActive(false);
-        otherAnim = false;
+                Debug.Log("µð¹ö±ë 22 " + anim.GetBool("isTouched"));
+        anim.SetBool("isTouched", false);
     }
 }
