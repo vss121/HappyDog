@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 24502097}
   - component: {fileID: 24502098}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1525,7 +1525,7 @@ GameObject:
   - component: {fileID: 188049017}
   - component: {fileID: 188049018}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1616,7 +1616,7 @@ GameObject:
   - component: {fileID: 198765890}
   - component: {fileID: 198765891}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4056,7 +4056,7 @@ GameObject:
   - component: {fileID: 443140007}
   - component: {fileID: 443140008}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4147,7 +4147,7 @@ GameObject:
   - component: {fileID: 452326471}
   - component: {fileID: 452326472}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4427,7 +4427,7 @@ GameObject:
   - component: {fileID: 507673207}
   - component: {fileID: 507673208}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4631,7 +4631,7 @@ GameObject:
   - component: {fileID: 535468129}
   - component: {fileID: 535468130}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4970,7 +4970,7 @@ GameObject:
   - component: {fileID: 573072257}
   - component: {fileID: 573072258}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5343,7 +5343,7 @@ GameObject:
   - component: {fileID: 653735625}
   - component: {fileID: 653735626}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8769,6 +8769,7 @@ GameObject:
   - component: {fileID: 1115249175}
   - component: {fileID: 1115249174}
   - component: {fileID: 1115249173}
+  - component: {fileID: 1115249176}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -8840,7 +8841,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1115249174}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1252036674}
+        m_TargetAssemblyTypeName: DepressScore, Assembly-CSharp
+        m_MethodName: Submit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1115249174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8879,6 +8892,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115249171}
   m_CullTransparentMesh: 1
+--- !u!114 &1115249176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115249171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a12338ca9020a45884576df5ce7182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1116299180
 GameObject:
   m_ObjectHideFlags: 0
@@ -9967,6 +10014,72 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1252036671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1252036673}
+  - component: {fileID: 1252036674}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1252036673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252036671}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 192.17258, y: -2101.0806, z: 1.3561995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1252036674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252036671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a12338ca9020a45884576df5ce7182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider:
+  - {fileID: 1660082814}
+  - {fileID: 24502098}
+  - {fileID: 535468130}
+  - {fileID: 653735626}
+  - {fileID: 1559755234}
+  - {fileID: 1505835389}
+  - {fileID: 1761648011}
+  - {fileID: 1638660349}
+  - {fileID: 188049018}
+  - {fileID: 2129984237}
+  - {fileID: 1581019083}
+  - {fileID: 507673208}
+  - {fileID: 1943915949}
+  - {fileID: 573072258}
+  - {fileID: 1290710819}
+  - {fileID: 2059183796}
+  - {fileID: 443140008}
+  - {fileID: 1656060129}
+  - {fileID: 452326472}
+  - {fileID: 1593189447}
+  - {fileID: 198765891}
 --- !u!1 &1260947663
 GameObject:
   m_ObjectHideFlags: 0
@@ -10398,7 +10511,7 @@ GameObject:
   - component: {fileID: 1290710818}
   - component: {fileID: 1290710819}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11738,7 +11851,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1500883320}
   m_HandleRect: {fileID: 1500883318}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.99988514
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -12235,7 +12348,7 @@ GameObject:
   - component: {fileID: 1505835388}
   - component: {fileID: 1505835389}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12650,7 +12763,7 @@ GameObject:
   - component: {fileID: 1559755233}
   - component: {fileID: 1559755234}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12741,7 +12854,7 @@ GameObject:
   - component: {fileID: 1581019082}
   - component: {fileID: 1581019083}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12832,7 +12945,7 @@ GameObject:
   - component: {fileID: 1593189446}
   - component: {fileID: 1593189447}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13171,7 +13284,7 @@ GameObject:
   - component: {fileID: 1638660348}
   - component: {fileID: 1638660349}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13490,7 +13603,7 @@ GameObject:
   - component: {fileID: 1656060128}
   - component: {fileID: 1656060129}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13581,7 +13694,7 @@ GameObject:
   - component: {fileID: 1660082813}
   - component: {fileID: 1660082814}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13929,7 +14042,7 @@ GameObject:
   - component: {fileID: 1761648010}
   - component: {fileID: 1761648011}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15055,7 +15168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.35773528}
+  m_AnchoredPosition: {x: 0, y: -0.08588457}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1816583271
@@ -15433,7 +15546,7 @@ GameObject:
   - component: {fileID: 1943915948}
   - component: {fileID: 1943915949}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15959,7 +16072,7 @@ GameObject:
   - component: {fileID: 2059183795}
   - component: {fileID: 2059183796}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16317,7 +16430,7 @@ GameObject:
   - component: {fileID: 2129984236}
   - component: {fileID: 2129984237}
   m_Layer: 5
-  m_Name: slider
+  m_Name: slider10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
