@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using Unity.UI;
 using UnityEngine.UI;
 
-public class DogAnimation : MonoBehaviour
+public class DogAnimation : MonoBehaviour, IPointerClickHandler
 {
     public Animator anim;
     public Vector2 mousePos;
@@ -14,31 +14,32 @@ public class DogAnimation : MonoBehaviour
     {
         anim.SetBool("isTouched", false);
     }
-    public void Update()
-    {
-        if (Input.GetMouseButton(0))
+    /*    public void Update()
         {
-            mousePos = Input.mousePosition;
-        }
-        Vector2 pos = Camera.main.ScreenToWorldPoint(mousePos);
-        RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
-        if (hit.collider != null)
-        {
-            Debug.Log(hit.collider.name);
-            if (hit.collider.name == "Dog")
+            if (Input.GetMouseButton(0))
             {
-                Debug.Log("µð¹ö±ë 00 " + anim.GetBool("isTouched"));
-                anim.SetBool("isTouched", true);
-                Debug.Log("µð¹ö±ë 11 " + anim.GetBool("isTouched"));
-                StartCoroutine(WaitForSec());
+                mousePos = Input.mousePosition;
             }
-        }
-    }
-
+            Vector2 pos = Camera.main.ScreenToWorldPoint(mousePos);
+            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+            if (hit.collider != null)
+            {
+                Debug.Log(hit.collider.name);
+                if (hit.collider.name == "Dog")
+                {
+                    anim.SetBool("isTouched", true);
+                    StartCoroutine(WaitForSec());
+                }
+            }
+        }*/
     private IEnumerator WaitForSec()
     {
-        yield return new WaitForSeconds(2.0f);
-                Debug.Log("µð¹ö±ë 22 " + anim.GetBool("isTouched"));
+        yield return new WaitForSeconds(3.0f);
         anim.SetBool("isTouched", false);
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        anim.SetBool("isTouched", true);
+        StartCoroutine(WaitForSec());
     }
 }
