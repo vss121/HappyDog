@@ -29,8 +29,9 @@ public class MoveScene : MonoBehaviour
     }
     public void GotoStore()
     {
-        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "StoreScene";
-        SceneChange.StartFade();
+        SceneLoading.NextSceneName("StoreScene");
+/*        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "StoreScene";
+        SceneChange.StartFade()*/;
     }
     public void GotoShower()
     {
@@ -42,9 +43,10 @@ public class MoveScene : MonoBehaviour
         SceneObject.GetComponent<SceneChangeEffect>().nextScene = "FeedScene";
         SceneChange.StartFade();
     }
-    public void GotoMove()
+    public void GotoMap()
     {
-        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "FeedScene";
-        SceneChange.StartFade();
+        SceneLoading.NextSceneName("MapScene");
+/*        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "MapScene";
+        SceneChange.StartFade();*/
     }
 }
