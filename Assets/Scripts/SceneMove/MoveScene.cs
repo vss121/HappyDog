@@ -19,8 +19,16 @@ public class MoveScene : MonoBehaviour
     }
     public void GotoMain()
     {
-        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "MainScene";
-        SceneChange.StartFade();
+        if(SceneObject.GetComponent<SceneChangeEffect>().nextScene== "MapScene" || SceneObject.GetComponent<SceneChangeEffect>().nextScene == "StoreScene")
+        {
+            SceneLoading.NextSceneName("MainScene");
+        }
+        else
+        {
+            SceneObject.GetComponent<SceneChangeEffect>().nextScene = "MainScene";
+            SceneChange.StartFade();
+        }
+
     }
     public void GotoDepression()
     {
@@ -29,6 +37,7 @@ public class MoveScene : MonoBehaviour
     }
     public void GotoStore()
     {
+        SceneLoading.nextScene = "";
         SceneLoading.NextSceneName("StoreScene");
 /*        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "StoreScene";
         SceneChange.StartFade()*/;
@@ -45,6 +54,7 @@ public class MoveScene : MonoBehaviour
     }
     public void GotoMap()
     {
+        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "MapScene";
         SceneLoading.NextSceneName("MapScene");
 /*        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "MapScene";
         SceneChange.StartFade();*/
