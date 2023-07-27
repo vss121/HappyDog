@@ -42,4 +42,9 @@ public class MoveScene : MonoBehaviour
         SceneObject.GetComponent<SceneChangeEffect>().nextScene = "FeedScene";
         SceneChange.StartFade();
     }
+    public void GotoMove()
+    {
+        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "FeedScene";
+        SceneChange.StartFade();
+    }
 }
