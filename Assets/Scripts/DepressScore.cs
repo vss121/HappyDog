@@ -22,7 +22,7 @@ public class DepressScore : MonoBehaviour
         score = score/210 * 100;
         
         Debug.Log(score); 
-        
+        score=0;
     }
     
 
