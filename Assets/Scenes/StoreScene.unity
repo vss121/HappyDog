@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 312346468}
   - component: {fileID: 312346467}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: AdvancedSnackText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 359890589}
   - component: {fileID: 359890588}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CommonFeedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,11 +692,11 @@ RectTransform:
   m_Father: {fileID: 103518858}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -15}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -10}
   m_SizeDelta: {x: 15, y: 15}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &403025255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,7 +915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ac716324d5b989e47ab202cd76141a9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 405591e17833ed14cb29f8e8a616fcf9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 788966852}
   - component: {fileID: 788966851}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: AdvancedShamText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1281,7 +1281,7 @@ GameObject:
   - component: {fileID: 1003524627}
   - component: {fileID: 1003524626}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: E4Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1532,7 +1532,7 @@ GameObject:
   - component: {fileID: 1195097839}
   - component: {fileID: 1195097838}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: E3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1667,7 +1667,7 @@ GameObject:
   - component: {fileID: 1195712639}
   - component: {fileID: 1195712638}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: AdvancedFeedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2080,7 +2080,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 178.89, y: -11.600006}
+  m_AnchoredPosition: {x: 36, y: -10}
   m_SizeDelta: {x: 190, y: 190}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1352217276
@@ -2159,8 +2159,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 405591e17833ed14cb29f8e8a616fcf9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2273,7 +2273,7 @@ GameObject:
   - component: {fileID: 1496516642}
   - component: {fileID: 1496516641}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: RareShamText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2652,7 +2652,7 @@ GameObject:
   - component: {fileID: 1609994852}
   - component: {fileID: 1609994851}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CommonShamText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2977,7 +2977,7 @@ GameObject:
   - component: {fileID: 1711684269}
   - component: {fileID: 1711684268}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CommonSnackText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3112,7 +3112,7 @@ GameObject:
   - component: {fileID: 1755354802}
   - component: {fileID: 1755354801}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: E1Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3512,11 +3512,11 @@ RectTransform:
   m_Father: {fileID: 103518858}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16.840347, y: 141.29999}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -9.800003, y: -15.700012}
   m_SizeDelta: {x: 100, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1955264397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3570,8 +3570,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3626,7 +3626,7 @@ GameObject:
   - component: {fileID: 1986868898}
   - component: {fileID: 1986868897}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: E2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
