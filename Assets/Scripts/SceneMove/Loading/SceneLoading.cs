@@ -12,9 +12,8 @@ public class SceneLoading : MonoBehaviour
     public TMP_Text PercentText;
     public static string nextScene;
     double Rounds_02;
-
+    public Slider slide;
     [SerializeField]
-    Image ProgressBar;
     public void Start()
     {
         StartCoroutine(LoadScene());
@@ -34,15 +33,16 @@ public class SceneLoading : MonoBehaviour
             yield return null; // 씬을 넘겨주지 않음
             if (op.progress < 0.9f)
             {
-                ProgressBar.fillAmount = op.progress;
+                slide.value = op.progress;
             }
             else
             {
                 timer += Time.unscaledDeltaTime;
-                ProgressBar.fillAmount = Mathf.Lerp(0f, 1f, timer * 0.3f);
-                Rounds_02 = Math.Truncate((ProgressBar.fillAmount * 100));
+                slide.value = Mathf.Lerp(0f, 1f, timer * 0.3f);
+                Rounds_02 = Math.Truncate((slide.value * 100));
                 PercentText.text = Rounds_02 + "%";
-                if (ProgressBar.fillAmount >= 1f)
+
+                if (slide.value >= 1f)
                 {
                     op.allowSceneActivation = true;
                     yield break;

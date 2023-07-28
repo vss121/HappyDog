@@ -34,12 +34,12 @@ public class DogAnimation : MonoBehaviour, IPointerClickHandler
         }*/
     private IEnumerator WaitForSec()
     {
-        yield return new WaitForSeconds(3.0f);
+        anim.SetBool("isTouched", true);
+        yield return new WaitForSeconds(1.5f);
         anim.SetBool("isTouched", false);
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        anim.SetBool("isTouched", true);
         StartCoroutine(WaitForSec());
     }
 }
