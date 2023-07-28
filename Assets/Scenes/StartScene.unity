@@ -488,7 +488,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1835175989}
-        m_TargetAssemblyTypeName: StartScript, Assembly-CSharp
+        m_TargetAssemblyTypeName: StartSceneDB, Assembly-CSharp
         m_MethodName: btnClicked
         m_Mode: 1
         m_Arguments:
@@ -648,7 +648,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1835175984}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b6ecf4ae57354d44aa2f7ed8d9a1213, type: 3}
+  m_Script: {fileID: 11500000, guid: 182e809efe5a1464483c9f09f2d32ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1953311687
