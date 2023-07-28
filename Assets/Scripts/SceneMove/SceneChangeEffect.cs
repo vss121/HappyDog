@@ -8,12 +8,10 @@ public class SceneChangeEffect : MonoBehaviour
 {
     public GameObject ImgObject;
     Image image;
-    float time, start, end;
+    float time;
     public string nextScene;
     void Start()
     {
-        start = 1f;
-        end = 0f;
         ImgObject = transform.GetChild(0).gameObject;
         image = ImgObject.GetComponent<Image>();
     }
