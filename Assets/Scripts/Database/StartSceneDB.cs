@@ -39,13 +39,11 @@ public class StartSceneDB : MonoBehaviour
                 unityWebRequest.downloadedBytes.ToString();
                 yield return unityWebRequest.SendWebRequest().isDone;
                 File.WriteAllBytes(filepath, unityWebRequest.downloadHandler.data);
-
-
             }
         }
         else // pc
         {
-            filepath = Application.dataPath + "/" + DBName;
+            filepath = Application.dataPath + "/" + DBName; // assets 안
             if (!File.Exists(filepath))
             {
                 File.Copy(Application.streamingAssetsPath + "/" + DBName, filepath);
