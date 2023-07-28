@@ -46,47 +46,14 @@ public class MainSceneDB : MonoBehaviour
 
 
 
-
-    private void Awake()
-    {
-        StartCoroutine(DBCreate());
-    }
-
     private void Start()
     {
-        DBConnectionCheck();
+        //DBConnectionCheck();
         DBMainSceneInitialize();
         
     }
 
-    IEnumerator DBCreate()
-    {
-        string filepath = string.Empty;
-        if (Application.platform == RuntimePlatform.Android) // Android 
-        {
-            filepath = Application.persistentDataPath + "/"+ DBName; // Path for android
-            if (!File.Exists(filepath))
-            {
-                UnityWebRequest unityWebRequest = UnityWebRequest.Get("jar:file://" + Application.dataPath + "!/assets/"+DBName);
-                unityWebRequest.downloadedBytes.ToString();
-                yield return unityWebRequest.SendWebRequest().isDone;
-                File.WriteAllBytes(filepath, unityWebRequest.downloadHandler.data);
 
-
-            }
-        }
-        else // pc
-        {
-            filepath = Application.dataPath + "/" + DBName;
-            if (!File.Exists(filepath))
-            {
-                File.Copy(Application.streamingAssetsPath + "/" + DBName, filepath);
-            }
-        }
-        Debug.Log("DB Create: OK");
-
-
-    }
 
     public string GetDBFilePath()
     {
@@ -103,28 +70,6 @@ public class MainSceneDB : MonoBehaviour
         return str;
     }
 
-    public void DBConnectionCheck()
-    {
-        try
-        {
-            IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
-            dbConnection.Open();
-
-            if (dbConnection.State == ConnectionState.Open)
-            {
-                Debug.Log("DB Conn: OK");
-            }
-            else
-            {
-                Debug.Log("DB Conn: Fail");
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.Log(e);
-        }
-
-    }
 
      //Insert To Database
     private void DBInsert(string query)

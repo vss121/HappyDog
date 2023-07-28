@@ -4,7 +4,7 @@ using System.Text;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System;
 public class testShower : MonoBehaviour
 {
     public Slider slide;
@@ -13,12 +13,19 @@ public class testShower : MonoBehaviour
     public GameObject Third; // 뽀송뽀송 사진(if 청결도 50이상 && 샤워완료)=> 샤워후 
     public GameObject Fourth; // 지저분한 사진(청결도 50미만)
     public GameObject Animobj;
-    public GameObject Waterobj;
-    public Button WaterBtn;
     public int score, count;
+    // 버튼 obj
+    public GameObject FirstObj;
+    public GameObject SecondObj;
+    public GameObject ThirdObj;
+    public GameObject FourthObj;
+    Button FirstBtn, SecondBtn, ThirdBtn, FourthBtn;
     private void Start()
     {
-        WaterBtn = Waterobj.GetComponent<Button>();
+        FirstBtn = FirstObj.GetComponent<Button>();
+        SecondBtn = SecondObj.GetComponent<Button>();
+        ThirdBtn = ThirdObj.GetComponent<Button>();
+        FourthBtn = FourthObj.GetComponent<Button>();    
         if (slide.value >= 50)
         {
             First.SetActive(true);
@@ -41,6 +48,7 @@ public class testShower : MonoBehaviour
     {
         count++;
         SettingImg();
+        StartCoroutine(Wait());
         score = 10;
         slide.value += score;
         // DB재료 - 1
@@ -49,6 +57,7 @@ public class testShower : MonoBehaviour
     {
         count++;
         SettingImg();
+        StartCoroutine(Wait());
         score = 20;
         slide.value += score;
         // DB재료 - 1
@@ -57,13 +66,15 @@ public class testShower : MonoBehaviour
     {
         count++;
         SettingImg();
+        StartCoroutine(Wait());
         score = 30;
         slide.value += score;
         // DB재료 - 1
     }
     public void Watering()
     {
-        StartCoroutine(mulbangowl(3.0f));
+        StartCoroutine(mulbangowl());
+        CheckValue();
     }
     public void SettingImg() // 샤워중
     {
@@ -75,18 +86,17 @@ public class testShower : MonoBehaviour
             Fourth.SetActive(false);
         }
     }
-    IEnumerator mulbangowl(float coolTime)
+    IEnumerator mulbangowl()
     {
-        WaterBtn.enabled = false;
         Animobj.SetActive(true);
-        while (coolTime > 1.0f)
-        {
-            coolTime -= Time.deltaTime;
-            Debug.Log(coolTime);
-            yield return new WaitForFixedUpdate();
-        }
-        CheckValue();
+        disableBtn();
+        yield return new WaitForSeconds(3);
         Animobj.SetActive(false);
+    }
+    IEnumerator Wait(){
+        disableBtn();
+        yield return new WaitForSeconds(3);
+        ableBtn();
     }
     public void CheckValue()
     {
@@ -105,6 +115,18 @@ public class testShower : MonoBehaviour
             Fourth.SetActive(false);
             count = 0;
         }
-        WaterBtn.enabled = true;
+        ableBtn();
+    }
+    public void disableBtn(){
+        FirstBtn.enabled = false;
+        SecondBtn.enabled = false;
+        ThirdBtn.enabled = false;
+        FourthBtn.enabled = false;
+    }
+    public void ableBtn(){
+        FirstBtn.enabled = true;
+        SecondBtn.enabled = true;
+        ThirdBtn.enabled = true;
+        FourthBtn.enabled = true;
     }
 }
