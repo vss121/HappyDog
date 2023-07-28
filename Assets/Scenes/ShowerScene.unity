@@ -792,10 +792,12 @@ MonoBehaviour:
   Third: {fileID: 1814585678}
   Fourth: {fileID: 1160903941}
   Animobj: {fileID: 1701423166}
-  Waterobj: {fileID: 897181236}
-  WaterBtn: {fileID: 0}
   score: 0
   count: 0
+  FirstObj: {fileID: 1458287403}
+  SecondObj: {fileID: 1868718059}
+  ThirdObj: {fileID: 1527464130}
+  FourthObj: {fileID: 897181236}
 --- !u!4 &533848419
 Transform:
   m_ObjectHideFlags: 0
