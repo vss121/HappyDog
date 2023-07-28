@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System;
 
 public class DepressScore : MonoBehaviour
@@ -25,6 +26,9 @@ public class DepressScore : MonoBehaviour
         Debug.Log(score); 
         GameObject.Find("Database").GetComponent<DepressionTestDB>().InsertDepressionScore((int)Math.Ceiling(score));
         score=0;
+
+        // Move to MainScene
+        SceneManager.LoadScene("MainScene");
     }
     
 
