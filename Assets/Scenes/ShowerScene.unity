@@ -2292,6 +2292,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2139654747}
+        m_TargetAssemblyTypeName: ShowerDB, Assembly-CSharp
+        m_MethodName: shampoo1Clicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1458287407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2636,6 +2648,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2139654747}
+        m_TargetAssemblyTypeName: ShowerDB, Assembly-CSharp
+        m_MethodName: shampoo3Clicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1527464134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2761,6 +2785,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1304725540}
         m_TargetAssemblyTypeName: MoveScene, Assembly-CSharp
         m_MethodName: GotoMain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2139654747}
+        m_TargetAssemblyTypeName: ShowerDB, Assembly-CSharp
+        m_MethodName: DBShowerSceneEscape
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3240,6 +3276,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2139654747}
+        m_TargetAssemblyTypeName: ShowerDB, Assembly-CSharp
+        m_MethodName: shampoo2Clicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1868718063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3401,3 +3449,4 @@ MonoBehaviour:
   shampoo1Txt: {fileID: 129498557}
   shampoo2Txt: {fileID: 173188742}
   shampoo3Txt: {fileID: 937086216}
+  cleanlinessBar: {fileID: 1455895150}
