@@ -12,9 +12,19 @@ public class testfeeder : MonoBehaviour
     public GameObject Fourth;
     /*public GameObject Animobj;*/
     public int score, count;
+    /* 버튼 오브젝트들 */
+    public GameObject FirstObj;
+    public GameObject SecondObj;
+    public GameObject ThirdObj;
+    public GameObject FourthObj;
+    Button FirstBtn, SecondBtn, ThirdBtn, FourthBtn;
 
     private void Start()
     {
+        FirstBtn = FirstObj.GetComponent<Button>();
+        SecondBtn = SecondObj.GetComponent<Button>();
+        ThirdBtn = ThirdObj.GetComponent<Button>();
+        FourthBtn = FourthObj.GetComponent<Button>();
         if (slide.value < 60) //허기 비율 60미만이면
         {
             First.SetActive(true); //1번 배고픈모습만 ON
@@ -22,7 +32,6 @@ public class testfeeder : MonoBehaviour
             Third.SetActive(false);
             Fourth.SetActive(false);
             count = 0;
-
         }
         else //허기 비율 60이상
         {
@@ -31,7 +40,6 @@ public class testfeeder : MonoBehaviour
             Third.SetActive(false);
             Fourth.SetActive(true);
             count = 0;
-
         }
     }
 
@@ -74,7 +82,6 @@ public class testfeeder : MonoBehaviour
         StartCoroutine(mulbangowl());
         slide.value += score;
 
-
         // DB재료 - 1
 
     }
@@ -94,6 +101,7 @@ public class testfeeder : MonoBehaviour
     }
     IEnumerator mulbangowl()
     {
+        disableBtn();
         yield return new WaitForSeconds(3.0f);
         valuecheck();
     }
@@ -114,7 +122,21 @@ public class testfeeder : MonoBehaviour
             Third.SetActive(false);
             Fourth.SetActive(true);
         }
-
+        ableBtn();
+    }
+    public void disableBtn()
+    {
+        FirstBtn.enabled = false;
+        SecondBtn.enabled = false;
+        ThirdBtn.enabled = false;
+        FourthBtn.enabled = false;
+    }
+    public void ableBtn()
+    {
+        FirstBtn.enabled = true;
+        SecondBtn.enabled = true;
+        ThirdBtn.enabled = true;
+        FourthBtn.enabled = true;
     }
 }
 

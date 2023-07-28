@@ -158,11 +158,11 @@ RectTransform:
   m_Father: {fileID: 1051138577}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: -4.9999695}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 3.199997, y: -5}
   m_SizeDelta: {x: 30, y: 30}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &98884108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ac716324d5b989e47ab202cd76141a9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 405591e17833ed14cb29f8e8a616fcf9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -758,11 +758,11 @@ RectTransform:
   m_Father: {fileID: 1051138577}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -4.1, y: -5}
   m_SizeDelta: {x: 150, y: 300}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &354467078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3059,6 +3059,10 @@ MonoBehaviour:
   Fourth: {fileID: 1602935116}
   score: 0
   count: 0
+  FirstObj: {fileID: 671394915}
+  SecondObj: {fileID: 1588425095}
+  ThirdObj: {fileID: 1361251171}
+  FourthObj: {fileID: 2145524654}
 --- !u!4 &1906362299
 Transform:
   m_ObjectHideFlags: 0
