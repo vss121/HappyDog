@@ -33,7 +33,7 @@ public class ShowerDB : MonoBehaviour
     private void Start()
     {
         //DBConnectionCheck();
-        DBShowerSceneInitialize();
+        //DBShowerSceneInitialize();
         data_userNum = 1;
 
     }
@@ -170,5 +170,4 @@ public class ShowerDB : MonoBehaviour
         shampoo3Txt.text=$"x{data_shampoo3}";
         }
     }
-
 }
