@@ -82,6 +82,7 @@ public class testShower : MonoBehaviour
         score = 20;
         slide.value += score;
         // DB재료 - 1
+        Showerdb.shampoo2Clicked();
     }
     public void Three_Shampoo()
     {
@@ -91,6 +92,7 @@ public class testShower : MonoBehaviour
         score = 30;
         slide.value += score;
         // DB재료 - 1
+        Showerdb.shampoo3Clicked();
     }
     public void Watering()
     {
