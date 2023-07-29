@@ -97,7 +97,4 @@ public class StartSceneDB : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
-
-
-    
 }
