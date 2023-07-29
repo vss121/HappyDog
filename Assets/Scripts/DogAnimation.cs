@@ -14,24 +14,6 @@ public class DogAnimation : MonoBehaviour, IPointerClickHandler
     {
         anim.SetBool("isTouched", false);
     }
-    /*    public void Update()
-        {
-            if (Input.GetMouseButton(0))
-            {
-                mousePos = Input.mousePosition;
-            }
-            Vector2 pos = Camera.main.ScreenToWorldPoint(mousePos);
-            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
-            if (hit.collider != null)
-            {
-                Debug.Log(hit.collider.name);
-                if (hit.collider.name == "Dog")
-                {
-                    anim.SetBool("isTouched", true);
-                    StartCoroutine(WaitForSec());
-                }
-            }
-        }*/
     private IEnumerator WaitForSec()
     {
         anim.SetBool("isTouched", true);

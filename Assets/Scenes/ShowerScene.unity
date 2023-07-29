@@ -786,6 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458676ede202f304090ac81eb80ba6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Showerdb: {fileID: 0}
   slide: {fileID: 1455895150}
   First: {fileID: 763376203}
   Second: {fileID: 229160596}
@@ -798,6 +799,10 @@ MonoBehaviour:
   SecondObj: {fileID: 1868718059}
   ThirdObj: {fileID: 1527464130}
   FourthObj: {fileID: 897181236}
+  Firstimg: {fileID: 1458287407}
+  Secondimg: {fileID: 1868718063}
+  Thirdimg: {fileID: 1527464134}
+  Fourthimg: {fileID: 897181240}
 --- !u!4 &533848419
 Transform:
   m_ObjectHideFlags: 0
@@ -1313,13 +1318,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: -119565342, guid: 9070821f8856695479a968a9d24448b2, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &897181241
@@ -2292,18 +2297,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2139654747}
-        m_TargetAssemblyTypeName: ShowerDB, Assembly-CSharp
-        m_MethodName: shampoo1Clicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1458287407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2325,13 +2318,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: a745bb75eb1c53f42bf2634ba66c542f, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1458287408
@@ -2681,13 +2674,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: eab5923dc67afc644b37c3a639ae0a4b, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1527464135
@@ -3309,13 +3302,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 5b8da90c7727d4f40bbcdaa2c8e28420, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1868718064

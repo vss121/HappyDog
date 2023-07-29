@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using System;
 public class testShower : MonoBehaviour
 {
+    public ShowerDB Showerdb;
     public Slider slide;
     public GameObject First; // 기본 사진(청결도 50이상)
     public GameObject Second; // 샤워중인 사진(거품있음)
@@ -19,13 +20,32 @@ public class testShower : MonoBehaviour
     public GameObject SecondObj;
     public GameObject ThirdObj;
     public GameObject FourthObj;
+    // 이미지 투명도 조절을 위한 이미지 obj
+    public Image Firstimg;
+    public Image Secondimg;
+    public Image Thirdimg;
+    public Image Fourthimg;
+
     Button FirstBtn, SecondBtn, ThirdBtn, FourthBtn;
+
+    //  이미지 투명도 조절을 위한 Color 객체
+    Color FirstCo, SecondCo, ThirdCo, FourthCo;
     private void Start()
     {
+        // Script 가져오기
+        Showerdb = GameObject.Find("Database").GetComponent<ShowerDB>();
+        // 버튼obj 불러오기
         FirstBtn = FirstObj.GetComponent<Button>();
         SecondBtn = SecondObj.GetComponent<Button>();
         ThirdBtn = ThirdObj.GetComponent<Button>();
-        FourthBtn = FourthObj.GetComponent<Button>();    
+        FourthBtn = FourthObj.GetComponent<Button>();
+        // Color 불러오기
+        FirstCo = Firstimg.color;
+        SecondCo = Secondimg.color;
+        ThirdCo = Thirdimg.color;
+        FourthCo = Fourthimg.color;
+
+        Showerdb.DBShowerSceneInitialize();
         if (slide.value >= 50)
         {
             First.SetActive(true);
@@ -48,16 +68,17 @@ public class testShower : MonoBehaviour
     {
         count++;
         SettingImg();
-        StartCoroutine(Wait());
+        StartCoroutine(Wait(3.0f));
         score = 10;
         slide.value += score;
-        // DB재료 - 1
+        
+        Showerdb.shampoo1Clicked();
     }
     public void Two_Shampoo()
     {
         count++;
         SettingImg();
-        StartCoroutine(Wait());
+        StartCoroutine(Wait(3.0f));
         score = 20;
         slide.value += score;
         // DB재료 - 1
@@ -66,15 +87,14 @@ public class testShower : MonoBehaviour
     {
         count++;
         SettingImg();
-        StartCoroutine(Wait());
+        StartCoroutine(Wait(3.0f));
         score = 30;
         slide.value += score;
         // DB재료 - 1
     }
     public void Watering()
     {
-        StartCoroutine(mulbangowl());
-        CheckValue();
+        StartCoroutine(mulbangowl(4.0f));
     }
     public void SettingImg() // 샤워중
     {
@@ -86,16 +106,35 @@ public class testShower : MonoBehaviour
             Fourth.SetActive(false);
         }
     }
-    IEnumerator mulbangowl()
+    IEnumerator mulbangowl(float coolTime)
     {
-        Animobj.SetActive(true);
         disableBtn();
-        yield return new WaitForSeconds(3);
+        Animobj.SetActive(true);
+        float filledTime = 0f;
+        while(filledTime <= coolTime)
+        {
+            yield return new WaitForFixedUpdate();
+            filledTime += Time.deltaTime;
+            Firstimg.fillAmount = filledTime / coolTime;
+            Secondimg.fillAmount = filledTime / coolTime;
+            Thirdimg.fillAmount = filledTime / coolTime;
+            Fourthimg.fillAmount= filledTime / coolTime;
+        }
+        CheckValue();
         Animobj.SetActive(false);
     }
-    IEnumerator Wait(){
+    IEnumerator Wait(float coolTime){
         disableBtn();
-        yield return new WaitForSeconds(3);
+        float filledTime = 0f;
+        while (filledTime <= coolTime)
+        {
+            yield return new WaitForFixedUpdate();
+            filledTime += Time.deltaTime;
+            Firstimg.fillAmount = filledTime / coolTime;
+            Secondimg.fillAmount = filledTime / coolTime;
+            Thirdimg.fillAmount = filledTime / coolTime;
+            Fourthimg.fillAmount = filledTime / coolTime;
+        }
         ableBtn();
     }
     public void CheckValue()
@@ -117,16 +156,44 @@ public class testShower : MonoBehaviour
         }
         ableBtn();
     }
-    public void disableBtn(){
+    public void disableBtn() {
+        SetInvisable();
         FirstBtn.enabled = false;
         SecondBtn.enabled = false;
         ThirdBtn.enabled = false;
         FourthBtn.enabled = false;
     }
     public void ableBtn(){
+        Setvisable();
         FirstBtn.enabled = true;
         SecondBtn.enabled = true;
         ThirdBtn.enabled = true;
         FourthBtn.enabled = true;
     }
+
+    public void SetInvisable()
+    {
+        // 비활성화 투명도 설정
+        FirstCo.a = 0.5f;
+        SecondCo.a = 0.5f;
+        ThirdCo.a = 0.5f;
+        FourthCo.a = 0.5f;
+        Firstimg.color = FirstCo;
+        Secondimg.color = SecondCo;
+        Thirdimg.color = ThirdCo;
+        Fourthimg.color = FourthCo;
+    }
+    public void Setvisable()
+    {
+        // 활성화 투명도 설정
+        FirstCo.a = 1.0f;
+        SecondCo.a = 1.0f;
+        ThirdCo.a = 1.0f;
+        FourthCo.a = 1.0f;
+        Firstimg.color = FirstCo;
+        Secondimg.color = SecondCo;
+        Thirdimg.color = ThirdCo;
+        Fourthimg.color = FourthCo;
+    }
+
 }
