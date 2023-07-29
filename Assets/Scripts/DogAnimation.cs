@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
 using Unity.VisualScripting;
-using Unity.UI;
 using UnityEngine.UI;
 
 public class DogAnimation : MonoBehaviour, IPointerClickHandler
