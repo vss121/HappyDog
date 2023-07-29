@@ -10,30 +10,32 @@ using System.IO;
 using UnityEngine.Networking;
 using Mono.Data.Sqlite;
 
-public class ShowerDB : MonoBehaviour
+public class FeedDB : MonoBehaviour
 {
     string DBName = "test1.db";
 
     //************** storage Table **************
     int data_userNum = 1;
-    int data_shampoo1;
-    int data_shampoo2;
-    int data_shampoo3;
+    int data_feed1;
+    int data_feed2;
+    int data_feed3;
+    int data_feed4;
     //************** dog Table **************
-    int data_cleanliness;
+    int data_hunger;
 
 
     //************** UI **************
-    public TextMeshProUGUI shampoo1Txt;
-    public TextMeshProUGUI shampoo2Txt;
-    public TextMeshProUGUI shampoo3Txt;
-    public Slider cleanlinessBar;
+    public TextMeshProUGUI feed1Txt;
+    public TextMeshProUGUI feed2Txt;
+    public TextMeshProUGUI feed3Txt;
+    public TextMeshProUGUI feed4Txt;
+    public Slider hungerBar;
 
 
     private void Start()
     {
         //DBConnectionCheck();
-        //DBShowerSceneInitialize();
+        DBFeedSceneInitialize();
         data_userNum = 1;
 
     }
@@ -96,7 +98,7 @@ public class ShowerDB : MonoBehaviour
 
 
     // **************************************************************************************
-    public void DBShowerSceneInitialize(){
+    public void DBFeedSceneInitialize(){
 
         IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
         dbConnection.Open();
@@ -106,9 +108,10 @@ public class ShowerDB : MonoBehaviour
         while (dataReader.Read())
         {
             //shampoo
-            data_shampoo1=dataReader.GetInt32(9);
-            data_shampoo2=dataReader.GetInt32(10);
-            data_shampoo3=dataReader.GetInt32(11);
+            data_feed1=dataReader.GetInt32(5);
+            data_feed2=dataReader.GetInt32(6);
+            data_feed3=dataReader.GetInt32(7);
+            data_feed4=dataReader.GetInt32(8);
         }
         dataReader.Dispose();
         dataReader = null;
@@ -124,8 +127,8 @@ public class ShowerDB : MonoBehaviour
         dataReader = dbCommand.ExecuteReader();
         while (dataReader.Read())
         {
-            //cleanliness
-            cleanlinessBar.value=dataReader.GetInt32(4);
+            //hunger
+            data_hunger=dataReader.GetInt32(6);
         }
         dataReader.Dispose();
         dataReader = null;
@@ -135,39 +138,54 @@ public class ShowerDB : MonoBehaviour
         dbConnection = null;
 
         // Modify text
-        shampoo1Txt.text=$"x{data_shampoo1}";
-        shampoo2Txt.text=$"x{data_shampoo2}";
-        shampoo3Txt.text=$"x{data_shampoo3}";
+        feed1Txt.text=$"x{data_feed1}";
+        feed2Txt.text=$"x{data_feed2}";
+        feed3Txt.text=$"x{data_feed3}";
+        feed4Txt.text=$"x{data_feed4}";
+        hungerBar.value=data_hunger;
+
     }
 
-    public void DBShowerSceneEscape(){
-        data_cleanliness=Convert.ToInt32(cleanlinessBar.value);
-        DBInsert($"UPDATE dog SET cleanliness={data_cleanliness}");
-        DBInsert($"UPDATE storage SET shampoo1={data_shampoo1}, shampoo2={data_shampoo2}, shampoo3={data_shampoo3} where userNum={data_userNum}");
+    public void DBFeedSceneEscape(){
+        data_hunger=Convert.ToInt32(hungerBar.value);
+        DBInsert($"UPDATE dog SET hunger={data_hunger}");
+        DBInsert($"UPDATE storage SET feed1={data_feed1}, feed2={data_feed2}, feed3={data_feed3}, feed4={data_feed4} where userNum={data_userNum}");
     }
 
     // **************************************************************************************
-    public void shampoo1Clicked()
+    public void feed1Clicked()
     {
-        if(cleanlinessBar.value<100 && data_shampoo1>0) {
-        data_shampoo1-=1;
-        shampoo1Txt.text=$"x{data_shampoo1}";
+        if(hungerBar.value<100 && data_feed1>0) {
+        data_feed1-=1;
+        feed1Txt.text=$"x{data_feed1}";
+        //Debug.Log(data_feed1);
         }
     }
 
-    public void shampoo2Clicked()
+    public void feed2Clicked()
     {
-        if(cleanlinessBar.value<100 && data_shampoo2>0) {
-        data_shampoo2-=1;
-        shampoo2Txt.text=$"x{data_shampoo2}";
+        if(hungerBar.value<100 && data_feed2>0) {
+        data_feed2-=1;
+        feed2Txt.text=$"x{data_feed2}";
+        //Debug.Log(data_feed2);
         }
     }
 
-    public void shampoo3Clicked()
+    public void feed3Clicked()
     {
-        if(cleanlinessBar.value<100 && data_shampoo3>0) {
-        data_shampoo3-=1;
-        shampoo3Txt.text=$"x{data_shampoo3}";
+        if(hungerBar.value<100 && data_feed3>0) {
+        data_feed3-=1;
+        feed3Txt.text=$"x{data_feed3}";
         }
     }
+
+    public void feed4Clicked()
+    {
+        if(hungerBar.value<100 && data_feed4>0) {
+        data_feed4-=1;
+        feed4Txt.text=$"x{data_feed4}";
+        }
+    }
+
+
 }
