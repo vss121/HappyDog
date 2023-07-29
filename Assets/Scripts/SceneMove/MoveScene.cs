@@ -58,4 +58,10 @@ public class MoveScene : MonoBehaviour
 /*        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "MapScene";
         SceneChange.StartFade();*/
     }
+    public void GotoSetting()
+    {
+        SceneManager.LoadScene("SettingScene");
+        /*SceneObject.GetComponent<SceneChangeEffect>().nextScene = "FeedScene";
+        SceneChange.StartFade();*/
+    }
 }
