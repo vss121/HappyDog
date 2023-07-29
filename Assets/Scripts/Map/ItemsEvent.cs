@@ -51,6 +51,33 @@ public class ItemsEvent : MonoBehaviour
         return dist * 1.609344;
     }
 
+    private void displayClickedOrNot()
+    {
+        playerLocation = GameObject.Find("Canvas").GetComponent<LocationStatus>();
+        //var currentPlayerLocation = new GeoCoordinate(playerLocation.GetLocationLat(), playerLocation.GetLocationLon());
+        //var eventLocation = new GeoCoordinate(eventPos[0], eventPos[1]);
+        var distance = DistanceTo(playerLocation.GetLocationLat(), playerLocation.GetLocationLon(), eventPos[0], eventPos[1]);  // distance calculation
+                                                                                                                                                //Debug.Log(distance + "km");
+
+
+        if (distance < 0.05)    // 50m 이내라면
+        {
+        if(!isClicked)
+        {
+            menuUIManager.DisplayUserInRangePanel();
+            //isClicked = true;//임시
+        }
+        else
+        {
+            menuUIManager.DisplayClickedPanel();
+        }
+                            
+    }
+        else
+        {
+            menuUIManager.DisplayUserNotInRangePanel();
+        }
+    }
 
     private void ListenInput()  // touch시와 click시 
     {
@@ -69,31 +96,8 @@ public class ItemsEvent : MonoBehaviour
                     if (hit.collider == GetComponent<BoxCollider>())
                     {
                         // 실행할 event
-
-                        playerLocation = GameObject.Find("Canvas").GetComponent<LocationStatus>();
-                        //var currentPlayerLocation = new GeoCoordinate(playerLocation.GetLocationLat(), playerLocation.GetLocationLon());
-                        //var eventLocation = new GeoCoordinate(eventPos[0], eventPos[1]);
-                        var distance = DistanceTo(playerLocation.GetLocationLat(), playerLocation.GetLocationLon(), eventPos[0], eventPos[1]);  // distance calculation
-                                                                                                                                                //Debug.Log(distance + "km");
-
-
-                        if (distance < 0.05)    // 50m 이내라면
-                        {
-                            if(!isClicked)
-                            {
-                                menuUIManager.DisplayUserInRangePanel();
-                                isClicked = true;
-                            }
-                            else
-                            {
-                                menuUIManager.DisplayClickedPanel();
-                            }
-                            
-                        }
-                        else
-                        {
-                            menuUIManager.DisplayUserNotInRangePanel();
-                        }
+                        displayClickedOrNot();
+                        
                     }
                 }
             }
@@ -110,30 +114,7 @@ public class ItemsEvent : MonoBehaviour
                 {
                     // 실행할 event
 
-                    playerLocation = GameObject.Find("Canvas").GetComponent<LocationStatus>();
-                    //var currentPlayerLocation = new GeoCoordinate(playerLocation.GetLocationLat(), playerLocation.GetLocationLon());
-                    //var eventLocation = new GeoCoordinate(eventPos[0], eventPos[1]);
-                    var distance = DistanceTo(playerLocation.GetLocationLat(), playerLocation.GetLocationLon(), eventPos[0], eventPos[1]);  // distance calculation
-                    Debug.Log(distance + "km");
-
-
-                    if (distance < 0.05)    // 50m 이내라면
-                    {
-                        if (!isClicked)
-                        {
-                            menuUIManager.DisplayUserInRangePanel();
-                            isClicked = true;
-                        }
-                        else
-                        {
-                            menuUIManager.DisplayClickedPanel();
-                        }
-
-                    }
-                    else
-                    {
-                        menuUIManager.DisplayUserNotInRangePanel();
-                    }
+                    displayClickedOrNot();
                 }
 
             }

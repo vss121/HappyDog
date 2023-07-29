@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 public class MenuUIManager : MonoBehaviour
@@ -10,11 +11,18 @@ public class MenuUIManager : MonoBehaviour
     [SerializeField] private GameObject chestPanel;
     [SerializeField] private GameObject clickedPanel;
     bool isUIPanelActive;
+    
+    public int aquiredTrophy;
+    public int aquiredMoney;
+    public int aquiredExp;
+    public TextMeshProUGUI panelText;
+    MapDB gm;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        aquiredTrophy=0;
+        gm=GameObject.Find("Database").GetComponent<MapDB>();
     }
 
     // Update is called once per frame
@@ -29,6 +37,22 @@ public class MenuUIManager : MonoBehaviour
         {
             eventPanelUserInRange.SetActive(true);
             isUIPanelActive = true;
+            aquiredTrophy+=1;
+
+            //
+            if (aquiredTrophy==1) {
+                gm.getQuote();
+                // quote이 뜨게
+            } else if (aquiredTrophy%2==0) {
+                aquiredMoney+=1;
+                gm.getMoney();
+                // 
+
+            } else if (aquiredTrophy%2==1) {
+                aquiredExp+=1;
+                gm.getExp();
+                //
+            }
         }
         
     }
