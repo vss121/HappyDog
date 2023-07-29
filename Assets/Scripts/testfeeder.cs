@@ -18,7 +18,6 @@ public class testfeeder : MonoBehaviour
     public GameObject ThirdObj;
     public GameObject FourthObj;
     Button FirstBtn, SecondBtn, ThirdBtn, FourthBtn;
-
     private void Start()
     {
         FirstBtn = FirstObj.GetComponent<Button>();
