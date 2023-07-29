@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 98884110}
   - component: {fileID: 98884109}
   - component: {fileID: 98884108}
+  - component: {fileID: 98884111}
   m_Layer: 5
   m_Name: gobackBTN
   m_TagString: Untagged
@@ -269,6 +270,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98884106}
   m_CullTransparentMesh: 1
+--- !u!82 &98884111
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98884106}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 4682075067164398586, guid: f6c5392f0307e5048a85183669c9e32b, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 2989985c48829af47b862781194c0087, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &140899905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,7 +1180,7 @@ AudioSource:
   m_GameObject: {fileID: 671394915}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4682075067164398586, guid: f6c5392f0307e5048a85183669c9e32b, type: 2}
   m_audioClip: {fileID: 8300000, guid: f2bf45d7909560d4090d562b7bdb2429, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.8
@@ -1238,18 +1335,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1917988312}
-        m_TargetAssemblyTypeName: FeedDB, Assembly-CSharp
-        m_MethodName: feed1Clicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &671394919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1271,13 +1356,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: fc1b150f3f710ed428b26ec06b77d05e, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &671394920
@@ -1601,10 +1686,10 @@ AudioSource:
   m_GameObject: {fileID: 1026103711}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4189924391437973299, guid: f6c5392f0307e5048a85183669c9e32b, type: 2}
   m_audioClip: {fileID: 8300000, guid: c8dd512bc467c8c4082b14cc1ab013d3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2118,7 +2203,7 @@ AudioSource:
   m_GameObject: {fileID: 1361251171}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4682075067164398586, guid: f6c5392f0307e5048a85183669c9e32b, type: 2}
   m_audioClip: {fileID: 8300000, guid: f2bf45d7909560d4090d562b7bdb2429, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.8
@@ -2273,18 +2358,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1917988312}
-        m_TargetAssemblyTypeName: FeedDB, Assembly-CSharp
-        m_MethodName: feed3Clicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1361251175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2306,13 +2379,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 15579b9e334104745b7690a38ab875f2, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1361251176
@@ -2546,7 +2619,7 @@ AudioSource:
   m_GameObject: {fileID: 1588425095}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4682075067164398586, guid: f6c5392f0307e5048a85183669c9e32b, type: 2}
   m_audioClip: {fileID: 8300000, guid: f2bf45d7909560d4090d562b7bdb2429, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.8
@@ -2701,18 +2774,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1917988312}
-        m_TargetAssemblyTypeName: FeedDB, Assembly-CSharp
-        m_MethodName: feed2Clicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1588425099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2734,13 +2795,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 98bebcf9674b1d54790c863387ea7294, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1588425100
@@ -3100,6 +3161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7f9961a97f8904294e24c62b7f51ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FeedDb: {fileID: 0}
   slide: {fileID: 354467078}
   First: {fileID: 1473452987}
   Second: {fileID: 1268874511}
@@ -3111,6 +3173,10 @@ MonoBehaviour:
   SecondObj: {fileID: 1588425095}
   ThirdObj: {fileID: 1361251171}
   FourthObj: {fileID: 2145524654}
+  Firstimg: {fileID: 671394919}
+  Secondimg: {fileID: 1588425099}
+  Thirdimg: {fileID: 1361251175}
+  Fourthimg: {fileID: 2145524658}
 --- !u!4 &1906362299
 Transform:
   m_ObjectHideFlags: 0
@@ -3293,7 +3359,7 @@ AudioSource:
   m_GameObject: {fileID: 2145524654}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4682075067164398586, guid: f6c5392f0307e5048a85183669c9e32b, type: 2}
   m_audioClip: {fileID: 8300000, guid: f2bf45d7909560d4090d562b7bdb2429, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.8
@@ -3448,18 +3514,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1917988312}
-        m_TargetAssemblyTypeName: FeedDB, Assembly-CSharp
-        m_MethodName: feed4Clicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2145524658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3481,13 +3535,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 51b3c4541e1157d4dad3697102a7081f, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &2145524659

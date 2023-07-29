@@ -27,7 +27,7 @@ public class WalkTime : MonoBehaviour
     {
         //timeText.text = timeStart.ToString("F2");
         imgLocation = GameObject.Find("StartPauseButton").GetComponent<Image>();
-        StartPauseBtn();
+        //StartPauseBtn();
     }
 
     // Update is called once per frame
