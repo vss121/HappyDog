@@ -163,18 +163,22 @@ public class MapDB : MonoBehaviour
         // 거리 update
         data_distance=Convert.ToInt32(distanceTxt.text);
         // 시간 update
-        data_time=timeText.text;
+        data_time='"'+timeText.text+'"';
         // 날짜 update
-        data_date=DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        data_date='"'+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+'"';
         // 배고픔 update : data_hunger-30
+        if (data_hunger>30) data_hunger-=30; else data_hunger=0;
         // 청결 update : data_cleanliness-30
+        if (data_cleanliness>30) data_cleanliness-=30; else data_cleanliness=0;
         // 돈 update : data_money+walkMoney
         // exp update : data_exp+walkExp
         // coll update : data_collection+1
-
-        //DBInsert($"INSERT INTO walk VALUES ({data_userNum}, {data_distance}, {data_time}, {data_date} )");
-        //DBInsert($"UPDATE dog SET hunger={data_hunger-30}, cleanliness={data_cleanliness-30}, money={data_money+walkMoney}, exp={data_exp+walkExp}, collection={data_collection+1} WHERE={data_userNum}");
-        //DBInsert($"UPDATE dog SET hunger={data_hunger-30} WHERE={data_userNum}");
+        if(hasColl) data_collection+=1;
+        // walk distance 나중에 수정
+        Debug.Log($"INSERT INTO walk VALUES ({data_userNum}, {data_distance}, {data_time}, {data_date} )");
+        DBInsert($"INSERT INTO walk VALUES ({data_userNum}, {data_distance}, {data_time}, {data_date} )");
+        Debug.Log($"UPDATE dog SET hunger={data_hunger}, cleanliness={data_cleanliness}, money={data_money+walkMoney}, exp={data_exp+walkExp}, collection={data_collection} WHERE userNum={data_userNum}");
+        DBInsert($"UPDATE dog SET hunger={data_hunger}, cleanliness={data_cleanliness}, money={data_money+walkMoney}, exp={data_exp+walkExp}, collection={data_collection} WHERE userNum={data_userNum}");
 
     }
 
@@ -186,6 +190,7 @@ public class MapDB : MonoBehaviour
             // text 변경
             quoteText.text=quote;
             panelText.text='"'+quote+'"';
+            hasColl=true;
         } else {
             Debug.Log("collection 개수 관련 error");
         }
