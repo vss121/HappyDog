@@ -65,4 +65,9 @@ public class MoveScene : MonoBehaviour
         /*SceneObject.GetComponent<SceneChangeEffect>().nextScene = "FeedScene";
         SceneChange.StartFade();*/
     }
+    public void GotoFirstDepress()
+    {
+        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "FirstDepressionScene";
+        SceneChange.StartFade();
+    }
 }
