@@ -16,6 +16,7 @@ public class MainSceneDB : MonoBehaviour
     //************** Main Scene **************
     //top
     public TextMeshProUGUI levelText;
+    public TextMeshProUGUI expText;
     public TextMeshProUGUI coinText;
     public TextMeshProUGUI nameText;
     // bottom
@@ -23,6 +24,12 @@ public class MainSceneDB : MonoBehaviour
     public Slider cleanlinessBar;
     public Slider depressionBar;
     public Slider hungerBar;
+    // clothes
+    public GameObject clothes1Object;
+    public GameObject clothes2Object;
+    public GameObject clothes3Object;
+    public GameObject clothes4Object;
+
 
 
     //************** db **************
@@ -43,8 +50,12 @@ public class MainSceneDB : MonoBehaviour
     int data_money;
     int data_level;
     int data_walkDistance;
+    int data_clothes1On;
+    int data_clothes2On;
+    int data_clothes3On;
+    int data_clothes4On;
 
-
+    int totalExpFromDb;
 
 
     private void Start()
@@ -125,20 +136,15 @@ public class MainSceneDB : MonoBehaviour
     
         while (dataReader.Read())
         {
-            //Debug.Log($"{dataReader.GetInt32(0)}");
 
             ///////// dog table/////////
-            //data_userNum;
-            //data_dogName
-            /*data_dogName = dataReader.GetInt32(8);
-            dogNameText.text = Convert.ToString(data_dogname);*/
-            //data_breed=dataReader.GetInt32(2);
-
             // top
-            data_level = dataReader.GetInt32(7);
-            levelText.text=Convert.ToString(data_level);
+            //data_level = dataReader.GetInt32(7);
+            //levelText.text=Convert.ToString(data_level);
             data_money=dataReader.GetInt32(8);
             coinText.text=Convert.ToString(data_money);
+            totalExpFromDb = dataReader.GetInt32(9);
+            //expText.text=Convert.ToString(data_exp);
 
             //dog name
             data_dogName = dataReader.GetString(1);
@@ -153,6 +159,12 @@ public class MainSceneDB : MonoBehaviour
             depressionBar.value=data_depression;
             data_hunger=dataReader.GetInt32(6);
             hungerBar.value=data_hunger;
+
+            // clothes
+            data_clothes1On=dataReader.GetInt32(12);
+            data_clothes2On=dataReader.GetInt32(13);
+            data_clothes3On=dataReader.GetInt32(14);
+            data_clothes4On=dataReader.GetInt32(15);
             
             // 상시 update와 scene 들어올때마다 update 구분?
 
@@ -163,15 +175,28 @@ public class MainSceneDB : MonoBehaviour
         dbCommand = null;
         dbConnection.Close();
         dbConnection = null;
-        //levelText.text = 
-        //DBInsert("Insert into list(name, age) values('" + NameText.text + "','"+AgeText.text+"')");
-        //Update test Set NICKNAME = "멍청한토끼" Where ID = "user1"
 
+        // clothes 초기화
+        setClothes();
 
-        // Update UI text
+        // level, exp 초기화
+        setLevelExp();
 
-        
+    }
 
+    public void setClothes() 
+    {
+        if(data_clothes1On==1) clothes1Object.SetActive(true); else clothes1Object.SetActive(false);
+        if(data_clothes2On==1) clothes2Object.SetActive(true); else clothes2Object.SetActive(false);
+        if(data_clothes3On==1) clothes3Object.SetActive(true); else clothes3Object.SetActive(false);
+        if(data_clothes4On==1) clothes4Object.SetActive(true); else clothes4Object.SetActive(false);
+    }
+    public void setLevelExp()
+    {
+        data_level=totalExpFromDb/100;
+        data_exp=totalExpFromDb%100;
+        levelText.text="LV"+Convert.ToString(data_level);
+        expText.text=Convert.ToString(data_exp)+"EXP";
     }
     public void SettingLike()
     {
@@ -183,4 +208,6 @@ public class MainSceneDB : MonoBehaviour
     {
         // 계속 update?
     }
+
+
 }
