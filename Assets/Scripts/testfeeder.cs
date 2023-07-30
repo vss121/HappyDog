@@ -27,20 +27,10 @@ public class testfeeder : MonoBehaviour
     Button FirstBtn, SecondBtn, ThirdBtn, FourthBtn;
     //  이미지 투명도 조절을 위한 Color 객체
     Color FirstCo, SecondCo, ThirdCo, FourthCo;
-    private void Start()
+
+    private void Awake()
     {
         FeedDb = GameObject.Find("Database").GetComponent<FeedDB>();
-
-        FirstBtn = FirstObj.GetComponent<Button>();
-        SecondBtn = SecondObj.GetComponent<Button>();
-        ThirdBtn = ThirdObj.GetComponent<Button>();
-        FourthBtn = FourthObj.GetComponent<Button>();
-
-        FirstCo = Firstimg.color;
-        SecondCo = Secondimg.color;
-        ThirdCo = Thirdimg.color;
-        FourthCo = Fourthimg.color;
-
         FeedDb.DBFeedSceneInitialize();
         if (slide.value < 60) //허기 비율 60미만이면
         {
@@ -58,6 +48,17 @@ public class testfeeder : MonoBehaviour
             Fourth.SetActive(true);
             count = 0;
         }
+    }
+    private void Start()
+    {
+        FirstBtn = FirstObj.GetComponent<Button>();
+        SecondBtn = SecondObj.GetComponent<Button>();
+        ThirdBtn = ThirdObj.GetComponent<Button>();
+        FourthBtn = FourthObj.GetComponent<Button>();
+        FirstCo = Firstimg.color;
+        SecondCo = Secondimg.color;
+        ThirdCo = Thirdimg.color;
+        FourthCo = Fourthimg.color;
     }
 
     public void One_Food() // 버튼 클릭 이벤트

@@ -1424,7 +1424,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
       - m_Target: {fileID: 401698011}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -5617,8 +5617,11 @@ MonoBehaviour:
   prefab: {fileID: 1259467454943119630, guid: 2cbd7bc5d1ef04045a921f9dae71be77, type: 3}
   HeartObj: {fileID: 1908812487}
   PosObj: {fileID: 1714216832}
+  LikeSlide: {fileID: 847007633}
+  MainDB: {fileID: 0}
   movespeed: 2
   HeartImg: {fileID: 1908812490}
+  LikeVal: 0
   Pos: {x: 0, y: 0, z: 0}
 --- !u!1 &1939513992
 GameObject:

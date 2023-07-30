@@ -30,21 +30,10 @@ public class testShower : MonoBehaviour
 
     //  이미지 투명도 조절을 위한 Color 객체
     Color FirstCo, SecondCo, ThirdCo, FourthCo;
-    private void Start()
+    private void Awake()
     {
         // Script 가져오기
         Showerdb = GameObject.Find("Database").GetComponent<ShowerDB>();
-        // 버튼obj 불러오기
-        FirstBtn = FirstObj.GetComponent<Button>();
-        SecondBtn = SecondObj.GetComponent<Button>();
-        ThirdBtn = ThirdObj.GetComponent<Button>();
-        FourthBtn = FourthObj.GetComponent<Button>();
-        // Color 불러오기
-        FirstCo = Firstimg.color;
-        SecondCo = Secondimg.color;
-        ThirdCo = Thirdimg.color;
-        FourthCo = Fourthimg.color;
-
         Showerdb.DBShowerSceneInitialize();
         if (slide.value >= 50)
         {
@@ -60,6 +49,20 @@ public class testShower : MonoBehaviour
             Third.SetActive(false);
             Fourth.SetActive(true);
         }
+    }
+    private void Start()
+    {
+
+        // 버튼obj 불러오기
+        FirstBtn = FirstObj.GetComponent<Button>();
+        SecondBtn = SecondObj.GetComponent<Button>();
+        ThirdBtn = ThirdObj.GetComponent<Button>();
+        FourthBtn = FourthObj.GetComponent<Button>();
+        // Color 불러오기
+        FirstCo = Firstimg.color;
+        SecondCo = Secondimg.color;
+        ThirdCo = Thirdimg.color;
+        FourthCo = Fourthimg.color;
         count = 0;
         Animobj = GameObject.Find("BackGroundCanvus").transform.Find("Shower").gameObject;
         Animobj.SetActive(false);

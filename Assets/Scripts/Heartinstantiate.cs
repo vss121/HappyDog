@@ -10,12 +10,14 @@ public class Heartinstantiate : MonoBehaviour
     public GameObject HeartObj;
     public GameObject PosObj;
 
+    public Slider LikeSlide;
+    public MainSceneDB MainDB;
     GameObject instantiateB;
     GameObject instantiateC;
    
     public float movespeed = 2.0f;
     public Image HeartImg;
-    
+    public int LikeVal;
     Color HeartCo;
     
     Button HeartBtn;
@@ -26,11 +28,15 @@ public class Heartinstantiate : MonoBehaviour
         HeartCo = HeartImg.color;
         HeartBtn = HeartObj.GetComponent<Button>();
         Pos = PosObj.transform.position;
+        MainDB = GameObject.Find("Database").GetComponent<MainSceneDB>();
+        LikeVal = 3;
     }
     public void LikeBtnClick()
     {
         instantiateB = Instantiate(prefab, new Vector3(transform.position.x, transform.position.y,-1), Quaternion.identity, GameObject.Find("BackGroundCanvus").transform);
         instantiateC = Instantiate(prefab, new Vector3(Pos.x, Pos.y, Pos.z), Quaternion.identity, GameObject.Find("BackGroundCanvus").transform);
+        LikeSlide.value += LikeVal;
+        MainDB.SettingLike();
         StartCoroutine(Instance(0.3f));
     }
     IEnumerator Instance(float coolTime)
