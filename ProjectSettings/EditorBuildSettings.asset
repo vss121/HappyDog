@@ -4,41 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/StartScene.unity
-    guid: f10a41c82feec784aafeceb31faae1e1
-  - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 773dd10104a265b47ab4ccbbfccc108d
-  - enabled: 1
-    path: Assets/Scenes/ChatScene.unity
-    guid: 49a583ec511b3054fbc464851c182dc4
-  - enabled: 1
-    path: Assets/Scenes/CollectionScene.unity
-    guid: bdadcd2b05846b746a1781b27e747194
-  - enabled: 1
-    path: Assets/Scenes/ShowerScene.unity
-    guid: 2a3c5b0277a315544a6ee25887ffc361
-  - enabled: 1
-    path: Assets/Scenes/DepressionScene.unity
-    guid: 4635480d1b8a1ef41b7db5149e5d89ba
-  - enabled: 1
-    path: Assets/Scenes/FeedScene.unity
-    guid: c75dd6c671dd74348bc0efcb3cb3f45c
-  - enabled: 1
-    path: Assets/Scenes/StoreScene.unity
-    guid: fd1c16cc356c619469bfd02f39048abd
-  - enabled: 1
-    path: Assets/Scenes/MapScene.unity
-    guid: 53109ccc81c76a74f942ae87fc774bef
-  - enabled: 1
-    path: Assets/Scenes/LoadingScene.unity
-    guid: 1184e0b3174d6264a8fc6865b1b6fb05
-  - enabled: 1
-    path: Assets/Scenes/FirstSettingScene.unity
-    guid: 50eafa563570b62489c563155ca9ecfc
-  - enabled: 1
-    path: Assets/Scenes/SettingScene.unity
-    guid: 993aac5a8b822004c8f4b16e4a9a9e9b
+  m_Scenes: []
   m_configObjects: {}

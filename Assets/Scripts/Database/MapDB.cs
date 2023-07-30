@@ -174,6 +174,7 @@ public class MapDB : MonoBehaviour
 
         //DBInsert($"INSERT INTO walk VALUES ({data_userNum}, {data_distance}, {data_time}, {data_date} )");
         //DBInsert($"UPDATE dog SET hunger={data_hunger-30}, cleanliness={data_cleanliness-30}, money={data_money+walkMoney}, exp={data_exp+walkExp}, collection={data_collection+1} WHERE={data_userNum}");
+        //DBInsert($"UPDATE dog SET hunger={data_hunger-30} WHERE={data_userNum}");
 
     }
 

@@ -95,6 +95,6 @@ public class StartSceneDB : MonoBehaviour
 
     public void btnClicked()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("FirstSettingScene");
     }
 }

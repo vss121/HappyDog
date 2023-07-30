@@ -155,7 +155,7 @@ public class FeedDB : MonoBehaviour
     // **************************************************************************************
     public void feed1Clicked()
     {
-        if(hungerBar.value<100 && data_feed1>0) {
+        if(data_feed1>0) {
         data_feed1-=1;
         feed1Txt.text=$"x{data_feed1}";
         //Debug.Log(data_feed1);
@@ -164,7 +164,7 @@ public class FeedDB : MonoBehaviour
 
     public void feed2Clicked()
     {
-        if(hungerBar.value<100 && data_feed2>0) {
+        if(data_feed2>0) {
         data_feed2-=1;
         feed2Txt.text=$"x{data_feed2}";
         //Debug.Log(data_feed2);
@@ -173,7 +173,7 @@ public class FeedDB : MonoBehaviour
 
     public void feed3Clicked()
     {
-        if(hungerBar.value<100 && data_feed3>0) {
+        if(data_feed3>0) {
         data_feed3-=1;
         feed3Txt.text=$"x{data_feed3}";
         }
@@ -181,7 +181,7 @@ public class FeedDB : MonoBehaviour
 
     public void feed4Clicked()
     {
-        if(hungerBar.value<100 && data_feed4>0) {
+        if(data_feed4>0) {
         data_feed4-=1;
         feed4Txt.text=$"x{data_feed4}";
         }
