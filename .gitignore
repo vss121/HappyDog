@@ -2,6 +2,7 @@ Assets/Resources/Mapbox/MapboxConfiguration.txt
 user.keystore
 Assets/test1.db
 Assets/test1.db.meta
+Assets/Scripts/Chat/ChatGptApi.cs
 
 # This .gitignore file should be placed at the root of your Unity project directory
 #

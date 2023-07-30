@@ -96,7 +96,9 @@ public class ItemsEvent : MonoBehaviour
                     if (hit.collider == GetComponent<BoxCollider>())
                     {
                         // 실행할 event
+                        //Destroy(this);
                         displayClickedOrNot();
+                        //Destroy(this);
                         
                     }
                 }
@@ -113,8 +115,9 @@ public class ItemsEvent : MonoBehaviour
                 if (hit.collider == GetComponent<BoxCollider>())
                 {
                     // 실행할 event
-
+                    //Destroy(this);
                     displayClickedOrNot();
+                    //Destroy(this);
                 }
 
             }
