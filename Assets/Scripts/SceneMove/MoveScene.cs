@@ -21,6 +21,7 @@ public class MoveScene : MonoBehaviour
     {
         if(SceneObject.GetComponent<SceneChangeEffect>().nextScene== "MapScene" || SceneManager.GetActiveScene().ToString() == "StartScene")
         {
+            SceneObject.GetComponent<SceneChangeEffect>().nextScene = "MainScene";
             SceneLoading.NextSceneName("MainScene");
         }
         else
