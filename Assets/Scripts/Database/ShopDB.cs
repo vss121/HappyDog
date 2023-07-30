@@ -354,22 +354,34 @@ public class ShopDB : MonoBehaviour
     }
     public void toggle1Clicked()
     {
+        if(data_clothes1<=0) toggle1.isOn=false;
+        else {
         if(toggle1.isOn==true) data_clothes1On=1; else if (toggle1.isOn==false) data_clothes1On=0;
         DBStoreUpdate();
+        }
     }
     public void toggle2Clicked()
     {
+        if(data_clothes2<=0) toggle2.isOn=false;
+        else {
         if(toggle2.isOn==true) data_clothes2On=1; else if (toggle2.isOn==false) data_clothes2On=0;
         DBStoreUpdate();
+        }
     }
     public void toggle3Clicked()
     {
+        if(data_clothes3<=0) toggle3.isOn=false;
+        else {
         if(toggle3.isOn==true) data_clothes3On=1; else if (toggle3.isOn==false) data_clothes3On=0;
         DBStoreUpdate();
+        }
     }
     public void toggle4Clicked()
     {
+        if(data_clothes4<=0) toggle4.isOn=false;
+        else {
         if(toggle4.isOn==true) data_clothes4On=1; else if (toggle4.isOn==false) data_clothes4On=0;
         DBStoreUpdate();
+        }
     }
 }
