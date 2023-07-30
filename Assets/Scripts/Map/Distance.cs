@@ -53,7 +53,7 @@ public class Distance : MonoBehaviour
                     myPrevLon = myCurrLon;
                     totalDistance += currDistance;
                     //Debug.Log(currDistance);
-                    distanceText.text = string.Format("{0:F2}", totalDistance);
+                    distanceText.text = string.Format($"{Math.Round(totalDistance)}");
                     //Debug.Log("totalDistance : " + totalDistance);
                 }
                 
@@ -80,7 +80,7 @@ public class Distance : MonoBehaviour
         dist = Math.Acos(dist);
         dist = dist * 180 / Math.PI;
         dist = dist * 60 * 1.1515;
-        if (dist>=0.0d && dist<1.0d) return dist * 1.609344;
+        if (dist>=0.0d && dist<1.0d) return dist * 1.609344 *1000;  //m
         return 0;
     }
 

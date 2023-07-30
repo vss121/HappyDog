@@ -65,7 +65,7 @@ public class ItemsEvent : MonoBehaviour
         if(!isClicked)
         {
             menuUIManager.DisplayUserInRangePanel();
-            //isClicked = true;//임시
+            isClicked = true;//임시
         }
         else
         {
