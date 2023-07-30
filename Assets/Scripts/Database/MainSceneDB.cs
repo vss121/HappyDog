@@ -166,8 +166,6 @@ public class MainSceneDB : MonoBehaviour
             data_clothes3On=dataReader.GetInt32(14);
             data_clothes4On=dataReader.GetInt32(15);
             
-            // 상시 update와 scene 들어올때마다 update 구분?
-
         }
         dataReader.Dispose();
         dataReader = null;
@@ -196,7 +194,7 @@ public class MainSceneDB : MonoBehaviour
         data_level=totalExpFromDb/100;
         data_exp=totalExpFromDb%100;
         levelText.text="LV"+Convert.ToString(data_level);
-        expText.text=Convert.ToString(data_exp)+"EXP";
+        expText.text="EXP"+Convert.ToString(data_exp);
     }
     public void SettingLike()
     {
@@ -206,7 +204,17 @@ public class MainSceneDB : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 계속 update?
+        if (Time.frameCount % 1000 == 0) {
+            //Debug.Log("data_likability "+data_likability);
+            data_likability-=2;
+            data_cleanliness-=1;
+            data_hunger-=1;
+            likabilityBar.value=data_likability;
+            cleanlinessBar.value=data_cleanliness;
+            hungerBar.value=data_hunger;
+            DBInsert($"UPDATE dog SET likability={data_likability}, cleanliness={data_cleanliness}, hunger={data_hunger} ");
+        }
+        
     }
 
 
