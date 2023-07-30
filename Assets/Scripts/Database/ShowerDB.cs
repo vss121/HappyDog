@@ -15,7 +15,7 @@ public class ShowerDB : MonoBehaviour
     string DBName = "test1.db";
 
     //************** storage Table **************
-    int data_userNum = 1;
+    public int data_userNum = 1;
     int data_shampoo1;
     int data_shampoo2;
     int data_shampoo3;
@@ -149,7 +149,7 @@ public class ShowerDB : MonoBehaviour
     // **************************************************************************************
     public void shampoo1Clicked()
     {
-        if(cleanlinessBar.value<100 && data_shampoo1>0) {
+        if(data_shampoo1>0) {
         data_shampoo1-=1;
         shampoo1Txt.text=$"x{data_shampoo1}";
         }
@@ -157,7 +157,7 @@ public class ShowerDB : MonoBehaviour
 
     public void shampoo2Clicked()
     {
-        if(cleanlinessBar.value<100 && data_shampoo2>0) {
+        if(data_shampoo2>0) {
         data_shampoo2-=1;
         shampoo2Txt.text=$"x{data_shampoo2}";
         }
@@ -165,7 +165,7 @@ public class ShowerDB : MonoBehaviour
 
     public void shampoo3Clicked()
     {
-        if(cleanlinessBar.value<100 && data_shampoo3>0) {
+        if(data_shampoo3>0) {
         data_shampoo3-=1;
         shampoo3Txt.text=$"x{data_shampoo3}";
         }
