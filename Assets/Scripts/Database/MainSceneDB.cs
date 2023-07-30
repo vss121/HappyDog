@@ -194,7 +194,7 @@ public class MainSceneDB : MonoBehaviour
         data_level=totalExpFromDb/100;
         data_exp=totalExpFromDb%100;
         levelText.text="LV"+Convert.ToString(data_level);
-        expText.text="EXP"+Convert.ToString(data_exp);
+        expText.text=Convert.ToString(data_exp)+"%";
     }
     public void SettingLike()
     {
