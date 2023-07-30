@@ -166,9 +166,11 @@ public class MainSceneDB : MonoBehaviour
         
 
     }
-
-
-
+    public void SettingLike()
+    {
+        data_likability = Convert.ToInt32(likabilityBar.value);
+        DBInsert($"UPDATE dog SET likability={data_likability}");
+    }
     // Update is called once per frame
     void Update()
     {
