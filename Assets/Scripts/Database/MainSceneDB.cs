@@ -17,6 +17,7 @@ public class MainSceneDB : MonoBehaviour
     //top
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI coinText;
+    public TextMeshProUGUI nameText;
     // bottom
     public Slider likabilityBar;
     public Slider cleanlinessBar;
@@ -129,16 +130,22 @@ public class MainSceneDB : MonoBehaviour
             ///////// dog table/////////
             //data_userNum;
             //data_dogName
+            /*data_dogName = dataReader.GetInt32(8);
+            dogNameText.text = Convert.ToString(data_dogname);*/
             //data_breed=dataReader.GetInt32(2);
 
             // top
-            data_level=dataReader.GetInt32(7);
+            data_level = dataReader.GetInt32(7);
             levelText.text=Convert.ToString(data_level);
             data_money=dataReader.GetInt32(8);
             coinText.text=Convert.ToString(data_money);
 
+            //dog name
+            data_dogName = dataReader.GetString(1);
+            nameText.text = Convert.ToString(data_dogName);
+
             // bottom
-            data_likability=dataReader.GetInt32(3);
+            data_likability =dataReader.GetInt32(3);
             likabilityBar.value=data_likability;
             data_cleanliness=dataReader.GetInt32(4);
             cleanlinessBar.value=data_cleanliness;
