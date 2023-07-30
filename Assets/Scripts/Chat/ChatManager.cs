@@ -53,7 +53,7 @@ public class ChatManager : MonoBehaviour
         String gptMsg;
         gptMsg = obj.GetComponent<OpenAI.ChatGpt>().receivedMessage;
         Debug.Log("ChatManager.cs : "+gptMsg);
-        Chat(false, gptMsg, "{puppy name}", null);
+        Chat(false, gptMsg, "", null);  // puppy name
         //Debug.Log("ChatManager.cs : end");
 
     }
