@@ -33,6 +33,7 @@ public class testShower : MonoBehaviour
     private void Awake()
     {
         // Script 가져오기
+        slide.interactable = false;
         Showerdb = GameObject.Find("Database").GetComponent<ShowerDB>();
         Showerdb.DBShowerSceneInitialize();
         if (slide.value >= 50)
