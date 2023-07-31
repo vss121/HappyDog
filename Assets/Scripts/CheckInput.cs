@@ -16,6 +16,7 @@ public class CheckInput : MonoBehaviour
     {
         string userinputName = InputNameText.text;
         string userinputAge = InputAgeText.text;
+        PlayerPrefs.SetFloat("CoolTime", 0f);
         if (string.IsNullOrEmpty(userinputName) || string.IsNullOrWhiteSpace(userinputName) ||
             string.IsNullOrEmpty(userinputAge) || string.IsNullOrWhiteSpace(userinputAge)) 
         {
