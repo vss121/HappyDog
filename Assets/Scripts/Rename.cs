@@ -10,7 +10,6 @@ public class Rename : MonoBehaviour
     private void Start()
     {
         InputNameText.text = GameObject.Find("Database").GetComponent<Setting2DB>().data_dogName;
-        Debug.Log(GameObject.Find("Database").GetComponent<Setting2DB>().data_dogName);
     }
     public void OKBtnClick()
     {
