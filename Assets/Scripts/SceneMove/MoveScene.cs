@@ -70,4 +70,9 @@ public class MoveScene : MonoBehaviour
         SceneObject.GetComponent<SceneChangeEffect>().nextScene = "FirstDepressionScene";
         SceneChange.StartFade();
     }
+    public void GoToDaily()
+    {
+        SceneObject.GetComponent<SceneChangeEffect>().nextScene = "DailyScene";
+        SceneChange.StartFade();
+    }
 }
