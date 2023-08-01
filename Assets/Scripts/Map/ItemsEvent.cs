@@ -20,6 +20,7 @@ public class ItemsEvent : MonoBehaviour
     {
         isClicked = false;
         menuUIManager = GameObject.Find("MiddlePanel").GetComponent<MenuUIManager>();
+    
     }
 
     // Update is called once per frame
@@ -31,8 +32,9 @@ public class ItemsEvent : MonoBehaviour
 
     private void FloatAndRotatePointer()
     {
-        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        //transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
         //transform.position= new Vector3(transform.position.x,(Mathf.Sin(Time.fixedTime*Mathf.PI*frequency)*amplitude)+15, transform.position.z );
+        transform.localScale = new Vector3(3, 3, 3);
     }
 
     public static double DistanceTo(double lat1, double lon1, double lat2, double lon2)
