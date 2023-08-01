@@ -55,6 +55,7 @@ public class MainSceneDB : MonoBehaviour
     int data_clothes3On;
     int data_clothes4On;
 
+    public int data_likeCount;
     int totalExpFromDb;
 
 
@@ -62,7 +63,6 @@ public class MainSceneDB : MonoBehaviour
     {
         //DBConnectionCheck();
         DBMainSceneInitialize();
-        
     }
 
 
@@ -84,7 +84,7 @@ public class MainSceneDB : MonoBehaviour
 
 
      //Insert To Database
-    private void DBInsert(string query)
+    public void DBInsert(string query)
     {
         IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
         dbConnection.Open(); 
@@ -165,7 +165,10 @@ public class MainSceneDB : MonoBehaviour
             data_clothes2On=dataReader.GetInt32(13);
             data_clothes3On=dataReader.GetInt32(14);
             data_clothes4On=dataReader.GetInt32(15);
-            
+
+            data_likeCount = dataReader.GetInt32(18);
+
+
         }
         dataReader.Dispose();
         dataReader = null;

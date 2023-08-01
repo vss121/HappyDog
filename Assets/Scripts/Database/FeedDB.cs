@@ -20,6 +20,7 @@ public class FeedDB : MonoBehaviour
     int data_feed2;
     int data_feed3;
     int data_feed4;
+    public int data_feedCount;
     //************** dog Table **************
     int data_hunger;
 
@@ -35,7 +36,7 @@ public class FeedDB : MonoBehaviour
     private void Start()
     {
         //DBConnectionCheck();
-        DBFeedSceneInitialize();
+        //DBFeedSceneInitialize();
         data_userNum = 1;
 
     }
@@ -56,15 +57,15 @@ public class FeedDB : MonoBehaviour
         return str;
     }
 
-     //Insert To Database
+    //Insert To Database
     private void DBInsert(string query)
     {
         IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
-        dbConnection.Open(); 
+        dbConnection.Open();
         IDbCommand dbCommand = dbConnection.CreateCommand();
 
-        dbCommand.CommandText = query; 
-        dbCommand.ExecuteNonQuery(); 
+        dbCommand.CommandText = query;
+        dbCommand.ExecuteNonQuery();
 
         dbCommand.Dispose();
         dbCommand = null;
@@ -78,7 +79,7 @@ public class FeedDB : MonoBehaviour
     {
         IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
         dbConnection.Open();
-        IDbCommand dbCommand=dbConnection.CreateCommand();
+        IDbCommand dbCommand = dbConnection.CreateCommand();
 
         dbCommand.CommandText = query;
         IDataReader dataReader = dbCommand.ExecuteReader();
@@ -98,20 +99,22 @@ public class FeedDB : MonoBehaviour
 
 
     // **************************************************************************************
-    public void DBFeedSceneInitialize(){
+    public void DBFeedSceneInitialize()
+    {
 
         IDbConnection dbConnection = new SqliteConnection(GetDBFilePath());
         dbConnection.Open();
-        IDbCommand dbCommand=dbConnection.CreateCommand();
+        IDbCommand dbCommand = dbConnection.CreateCommand();
         dbCommand.CommandText = $"SELECT * FROM storage WHERE userNum={data_userNum}";
         IDataReader dataReader = dbCommand.ExecuteReader();
         while (dataReader.Read())
         {
             //shampoo
-            data_feed1=dataReader.GetInt32(5);
-            data_feed2=dataReader.GetInt32(6);
-            data_feed3=dataReader.GetInt32(7);
-            data_feed4=dataReader.GetInt32(8);
+            data_feed1 = dataReader.GetInt32(5);
+            data_feed2 = dataReader.GetInt32(6);
+            data_feed3 = dataReader.GetInt32(7);
+            data_feed4 = dataReader.GetInt32(8);
+
         }
         dataReader.Dispose();
         dataReader = null;
@@ -122,13 +125,13 @@ public class FeedDB : MonoBehaviour
 
         dbConnection = new SqliteConnection(GetDBFilePath());
         dbConnection.Open();
-        dbCommand=dbConnection.CreateCommand();
+        dbCommand = dbConnection.CreateCommand();
         dbCommand.CommandText = $"SELECT * FROM dog WHERE userNum={data_userNum}";
         dataReader = dbCommand.ExecuteReader();
         while (dataReader.Read())
         {
-            //hunger
-            data_hunger=dataReader.GetInt32(6);
+            data_feedCount = dataReader.GetInt32(17);
+            data_hunger = dataReader.GetInt32(6);
         }
         dataReader.Dispose();
         dataReader = null;
@@ -138,52 +141,63 @@ public class FeedDB : MonoBehaviour
         dbConnection = null;
 
         // Modify text
-        feed1Txt.text=$"x{data_feed1}";
-        feed2Txt.text=$"x{data_feed2}";
-        feed3Txt.text=$"x{data_feed3}";
-        feed4Txt.text=$"x{data_feed4}";
-        hungerBar.value=data_hunger;
+        feed1Txt.text = $"x{data_feed1}";
+        feed2Txt.text = $"x{data_feed2}";
+        feed3Txt.text = $"x{data_feed3}";
+        feed4Txt.text = $"x{data_feed4}";
+        hungerBar.value = data_hunger;
 
     }
 
-    public void DBFeedSceneEscape(){
-        data_hunger=Convert.ToInt32(hungerBar.value);
+    public void DBFeedSceneEscape()
+    {
+        data_hunger = Convert.ToInt32(hungerBar.value);
         DBInsert($"UPDATE dog SET hunger={data_hunger}");
+        DBInsert($"UPDATE dog SET FeedCount={data_feedCount}");
         DBInsert($"UPDATE storage SET feed1={data_feed1}, feed2={data_feed2}, feed3={data_feed3}, feed4={data_feed4} where userNum={data_userNum}");
+        Debug.Log("FeedCount =" + data_feedCount);
     }
 
     // **************************************************************************************
     public void feed1Clicked()
     {
-        if(data_feed1>0) {
-        data_feed1-=1;
-        feed1Txt.text=$"x{data_feed1}";
-        //Debug.Log(data_feed1);
+        if (data_feed1 > 0)
+        {
+            data_feed1 -= 1;
+            data_feedCount += 1;
+            feed1Txt.text = $"x{data_feed1}";
+            //Debug.Log(data_feed1);
         }
     }
 
     public void feed2Clicked()
     {
-        if(data_feed2>0) {
-        data_feed2-=1;
-        feed2Txt.text=$"x{data_feed2}";
-        //Debug.Log(data_feed2);
+        if (data_feed2 > 0)
+        {
+            data_feed2 -= 1;
+            data_feedCount += 1;
+            feed2Txt.text = $"x{data_feed2}";
+            //Debug.Log(data_feed2);
         }
     }
 
     public void feed3Clicked()
     {
-        if(data_feed3>0) {
-        data_feed3-=1;
-        feed3Txt.text=$"x{data_feed3}";
+        if (data_feed3 > 0)
+        {
+            data_feed3 -= 1;
+            data_feedCount += 1;
+            feed3Txt.text = $"x{data_feed3}";
         }
     }
 
     public void feed4Clicked()
     {
-        if(data_feed4>0) {
-        data_feed4-=1;
-        feed4Txt.text=$"x{data_feed4}";
+        if (data_feed4 > 0)
+        {
+            data_feed4 -= 1;
+            data_feedCount += 1;
+            feed4Txt.text = $"x{data_feed4}";
         }
     }
 

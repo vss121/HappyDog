@@ -19,6 +19,7 @@ public class StartSceneDB : MonoBehaviour
 
     private void Awake()
     {
+        SettingPlayerprefebs();
         StartCoroutine(DBCreate());
     }
 
@@ -96,5 +97,13 @@ public class StartSceneDB : MonoBehaviour
     public void btnClicked()
     {
         SceneManager.LoadScene("FirstSettingScene");
+    }
+    public void SettingPlayerprefebs()
+    {
+        PlayerPrefs.DeleteKey("one_SliderValue");
+        PlayerPrefs.DeleteKey("two_SliderValue");
+        PlayerPrefs.DeleteKey("three_SliderValue");
+        PlayerPrefs.DeleteKey("four_SliderValue");
+        PlayerPrefs.DeleteKey("five_SliderValue");
     }
 }
