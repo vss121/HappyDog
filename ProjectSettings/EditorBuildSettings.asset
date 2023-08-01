@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FirstScene/FirstDepressionScene.unity
     guid: c91c73335a3935148811b3a0221153f2
+  - enabled: 1
+    path: Assets/Scenes/DailyScene.unity
+    guid: e0df787638014eb45bd9bc9b0e485c00
   m_configObjects: {}

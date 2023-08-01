@@ -60,6 +60,7 @@ public class Heartinstantiate : MonoBehaviour
         StartCoroutine(Instance(0.3f));
         if (!IsCoolTimeRunning())
         {
+            Debug.Log("asdasd");
             float CoolEndTime = Time.time + CoolDuration;
             PlayerPrefs.SetFloat(CoolTimeKey, CoolEndTime);
             StartCoroutine(StartCool(CoolDuration));
@@ -120,7 +121,7 @@ public class Heartinstantiate : MonoBehaviour
         HeartCo.a = 0.5f;
         HeartImg.color = HeartCo;
         HeartBtn.enabled = false;
-        float filledTime = 0f;
+        float filledTime = 60f - duration;
         while (filledTime <= duration)
         {
             yield return new WaitForFixedUpdate();
