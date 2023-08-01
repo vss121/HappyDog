@@ -89,5 +89,4 @@ public class DepressionTestDB : MonoBehaviour
         DBInsert($"INSERT INTO depression VALUES ({data_userNum}, '{data_date}', {data_score})");
         DBInsert($"UPDATE dog SET depression='{data_score}' where userNum={data_userNum}");
     }
-    
 }
