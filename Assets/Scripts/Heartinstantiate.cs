@@ -25,6 +25,7 @@ public class Heartinstantiate : MonoBehaviour
     public Vector3 Pos;
     public string CoolTimeKey = "CoolTime";
     public float CoolDuration = 60f;
+
     private void Start()
     {
         HeartCo = HeartImg.color;
@@ -39,7 +40,7 @@ public class Heartinstantiate : MonoBehaviour
             if (CoolEndTime > CurrentTime)
             {
                 float remainingTime = CoolEndTime - CurrentTime;
-                if(remainingTime >= 60f)
+                if (remainingTime >= 60f)
                 {
                     remainingTime = 60f;
                 }
@@ -57,10 +58,12 @@ public class Heartinstantiate : MonoBehaviour
         instantiateC = Instantiate(prefab, new Vector3(Pos.x, Pos.y, Pos.z), Quaternion.identity, GameObject.Find("BackGroundCanvus").transform);
         LikeSlide.value += LikeVal;
         MainDB.SettingLike();
+        MainDB.data_likeCount += 1;
+        MainDB.DBInsert($"UPDATE dog SET LikeCount={MainDB.data_likeCount}");
+        Debug.Log("LikeCount = " + MainDB.data_likeCount);
         StartCoroutine(Instance(0.3f));
         if (!IsCoolTimeRunning())
         {
-            Debug.Log("asdasd");
             float CoolEndTime = Time.time + CoolDuration;
             PlayerPrefs.SetFloat(CoolTimeKey, CoolEndTime);
             StartCoroutine(StartCool(CoolDuration));
