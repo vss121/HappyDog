@@ -56,6 +56,13 @@ public class DailyDB : MonoBehaviour
     public GameObject DailyReward5;
     Color RewardedColor;
 
+    //panel
+    public GameObject eventPanel1;
+    public GameObject eventPanel2;
+    public GameObject eventPanel3;
+    public GameObject eventPanel4;
+    public GameObject eventPanel5;
+    bool isPanelOn;
 
     private void Awake()
     {
@@ -67,6 +74,7 @@ public class DailyDB : MonoBehaviour
     {
         data_userNum = 1;
         RewardedColor = new Color(0, 255, 255);
+        isPanelOn=false;
     }
 
     private void Update()
@@ -168,31 +176,29 @@ public class DailyDB : MonoBehaviour
         FeedCountText.text = $"{data_FeedCount}/{PlayerPrefs.GetInt("three_SliderValue")}";
         LickCountText.text = $"{data_LikeCount}/{PlayerPrefs.GetInt("four_SliderValue")}";
         WalkDistanceText.text = $"{data_WalkDistance}/{PlayerPrefs.GetInt("five_SliderValue")}";
-
     }
 
     public void CehckingDaily()
     {
-        if (data_AttendCount >= Daily1Slider.maxValue)
-        {
-            DailyReward1.SetActive(true);
-        }
-        if (data_FeedCount >= Daily2Slider.maxValue)
-        {
-            DailyReward2.SetActive(true);
-        }
-        if (data_ShowerCount >= Daily3Slider.maxValue)
-        {
-            DailyReward3.SetActive(true);
-        }
-        if (data_LikeCount >= Daily4Slider.maxValue)
-        {
-            DailyReward4.SetActive(true);
-        }
-        if (data_WalkDistance >= Daily5Slider.maxValue)
-        {
-            DailyReward5.SetActive(true);
-        }
+        if (data_AttendCount >= Daily1Slider.maxValue) DailyReward1.SetActive(true);
+        else
+            DailyReward1.SetActive(false);
+
+        if (data_FeedCount >= Daily2Slider.maxValue) DailyReward2.SetActive(true);
+        else
+            DailyReward2.SetActive(false);
+
+        if (data_ShowerCount >= Daily3Slider.maxValue) DailyReward3.SetActive(true);
+        else
+            DailyReward3.SetActive(false);
+
+        if (data_LikeCount >= Daily4Slider.maxValue) DailyReward4.SetActive(true);
+        else
+            DailyReward4.SetActive(false);
+
+        if (data_WalkDistance >= Daily5Slider.maxValue) DailyReward5.SetActive(true);
+        else
+            DailyReward5.SetActive(false);
     }
 
 
@@ -273,12 +279,12 @@ public class DailyDB : MonoBehaviour
         Reward3_Scale = (int)Daily3Slider.maxValue;
         Reward4_Scale = (int)Daily4Slider.maxValue;
         Reward5_Scale = (int)Daily5Slider.maxValue;
+
         Daily1Slider.maxValue = Reward1_Scale;
         Daily2Slider.maxValue = Reward2_Scale;
         Daily3Slider.maxValue = Reward3_Scale;
         Daily4Slider.maxValue = Reward4_Scale;
         Daily5Slider.maxValue = Reward5_Scale;
-
     }
     public void Rewarded(GameObject RewardObj)
     {
@@ -296,13 +302,13 @@ public class DailyDB : MonoBehaviour
         data_TotalExp += exp;
         DBInsert($"UPDATE dog SET money={data_Money}, exp={data_TotalExp}");
         Debug.Log(data_Money + ",     " + data_TotalExp);
-    }
+    } 
 
     public void ComparePlayerPrefs()
     {
         if (PlayerPrefs.HasKey("one_SliderValue"))
         {
-            Daily1Slider.maxValue = PlayerPrefs.GetInt("One_SliderValue");
+            Daily1Slider.maxValue = PlayerPrefs.GetInt("one_SliderValue");
         }
         else
         {
@@ -345,5 +351,56 @@ public class DailyDB : MonoBehaviour
         {
             PlayerPrefs.SetInt("five_SliderValue", (int)Daily5Slider.maxValue);
         }
+    }
+
+    public void ShowPanel1()
+    {
+        if(!isPanelOn) {
+            Daily1Clicked();
+            eventPanel1.SetActive(true);
+            isPanelOn=true;
+        }
+    }
+        public void ShowPanel2()
+    {
+        if(!isPanelOn) {
+            Daily2Clicked();
+            eventPanel2.SetActive(true);
+            isPanelOn=true;
+        }
+    }
+        public void ShowPanel3()
+    {
+        if(!isPanelOn) {
+            Daily3Clicked();
+            eventPanel3.SetActive(true);
+            isPanelOn=true;
+        }
+    }
+        public void ShowPanel4()
+    {
+        if(!isPanelOn) {
+            Daily4Clicked();
+            eventPanel4.SetActive(true);
+            isPanelOn=true;
+        }
+    }
+        public void ShowPanel5()
+    {
+        if(!isPanelOn) {
+            Daily5Clicked();
+            eventPanel5.SetActive(true);
+            isPanelOn=true;
+        }
+    }
+
+    public void disablePanel()
+    {
+        eventPanel1.SetActive(false);
+        eventPanel2.SetActive(false);
+        eventPanel3.SetActive(false);
+        eventPanel4.SetActive(false);
+        eventPanel5.SetActive(false);
+        isPanelOn=false;
     }
 }
