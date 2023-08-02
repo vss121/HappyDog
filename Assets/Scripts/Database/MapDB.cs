@@ -24,7 +24,8 @@ public class MapDB : MonoBehaviour
     int data_exp;
     int data_walkDistance;
     int data_collection;
-    
+    int data_lastDistance; // 산책 start를 위한 가장최근 산책거리 표시를위한것
+
 
     //************** walk Table **************
     int data_distance;
@@ -142,6 +143,7 @@ public class MapDB : MonoBehaviour
             data_money=dataReader.GetInt32(8);    // money
             data_exp=dataReader.GetInt32(9);    // exp
             data_collection=dataReader.GetInt32(11);    // collection
+            data_lastDistance = dataReader.GetInt32(20);  //lastdistance
             Debug.Log("data_collection"+data_collection); 
         }
         dataReader.Dispose();
@@ -177,8 +179,9 @@ public class MapDB : MonoBehaviour
         // walk distance 나중에 수정
         Debug.Log($"INSERT INTO walk VALUES ({data_userNum}, {data_distance}, {data_time}, {data_date} )");
         DBInsert($"INSERT INTO walk VALUES ({data_userNum}, {data_distance}, {data_time}, {data_date} )");
-        Debug.Log($"UPDATE dog SET hunger={data_hunger}, cleanliness={data_cleanliness}, money={data_money+walkMoney}, exp={data_exp+walkExp}, collection={data_collection} WHERE userNum={data_userNum}");
-        DBInsert($"UPDATE dog SET hunger={data_hunger}, cleanliness={data_cleanliness}, money={data_money+walkMoney}, exp={data_exp+walkExp}, collection={data_collection} WHERE userNum={data_userNum}");
+
+        Debug.Log($"UPDATE dog SET hunger={data_hunger}, cleanliness={data_cleanliness}, money={data_money+walkMoney}, exp={data_exp+walkExp}, collection={data_collection},lastDistance={data_distance} WHERE userNum={data_userNum}");
+        DBInsert($"UPDATE dog SET hunger={data_hunger}, cleanliness={data_cleanliness}, money={data_money+walkMoney}, exp={data_exp+walkExp}, collection={data_collection},lastDistance={data_distance} WHERE userNum={data_userNum}");
 
     }
 
@@ -198,10 +201,10 @@ public class MapDB : MonoBehaviour
 
     public void getMoney()
     {
-        walkMoney+=300; // 한번에 300씩 획득
+        walkMoney+=500; // 한번에 500씩 획득
         moneyText.text=walkMoney.ToString();
         panelText.fontSize=73;
-        panelText.text="Aquired +300G!";
+        panelText.text="Aquired +500G!";
     }
     public void getExp()
     {

@@ -212,7 +212,7 @@ public class ShopDB : MonoBehaviour
     public void feed1Clicked()
     {
         int price=75;   //
-        if(data_money>price) {
+        if(data_money>=price) {
         data_feed1+=1;   // 수정
         feed1Txt.text=$"x{data_feed1}";   //
         data_money-=price;
@@ -225,7 +225,7 @@ public class ShopDB : MonoBehaviour
     public void feed2Clicked()
     {
         int price=100;   //
-        if(data_money>price) {
+        if(data_money>=price) {
         data_feed2+=1;   // 수정
         feed2Txt.text=$"x{data_feed2}";   //
         data_money-=price;
@@ -238,7 +238,7 @@ public class ShopDB : MonoBehaviour
     public void feed3Clicked()
     {
         int price=45;   //
-        if(data_money>price) {
+        if(data_money>=price) {
         data_feed3+=1;   // 수정
         feed3Txt.text=$"x{data_feed3}";   //
         data_money-=price;
@@ -251,7 +251,7 @@ public class ShopDB : MonoBehaviour
     public void feed4Clicked()
     {
         int price=80;   //
-        if(data_money>price) {
+        if(data_money>=price) {
         data_feed4+=1;   // 수정
         feed4Txt.text=$"x{data_feed4}";   //
         data_money-=price;
@@ -264,7 +264,7 @@ public class ShopDB : MonoBehaviour
     public void shampoo1Clicked()
     {
         int price=70;   //
-        if(data_money>price) {
+        if(data_money>=price) {
         data_shampoo1+=1;   // 수정
         shampoo1Txt.text=$"x{data_shampoo1}";   //
         data_money-=price;
@@ -277,7 +277,7 @@ public class ShopDB : MonoBehaviour
     public void shampoo2Clicked()
     {
         int price=90;   //
-        if(data_money>price) {
+        if(data_money>=price) {
         data_shampoo2+=1;   // 수정
         shampoo2Txt.text=$"x{data_shampoo2}";   //
         data_money-=price;
@@ -290,7 +290,7 @@ public class ShopDB : MonoBehaviour
     public void shampoo3Clicked()
     {
         int price=120;   //
-        if(data_money>price) {
+        if(data_money>=price) {
         data_shampoo3+=1;   // 수정
         shampoo3Txt.text=$"x{data_shampoo3}";   //
         data_money-=price;
@@ -303,7 +303,7 @@ public class ShopDB : MonoBehaviour
     public void clothes1Clicked()
     {
         int price=500;   //
-        if(data_money>price) {
+        if(data_money>=price) {
         data_clothes1+=1;   // 수정
         clothes1Txt.text=$"x{data_clothes1}";   //
         data_money-=price;
@@ -316,7 +316,7 @@ public class ShopDB : MonoBehaviour
     public void clothes2Clicked()
     {
         int price=700;   //
-        if(data_money>price) {
+        if(data_money>=price) {
         data_clothes2+=1;   // 수정
         clothes2Txt.text=$"x{data_clothes2}";   //
         data_money-=price;
@@ -329,7 +329,7 @@ public class ShopDB : MonoBehaviour
     public void clothes3Clicked()
     {
         int price=500;   //
-        if(data_money>price) {
+        if(data_money>=price) {
         data_clothes3+=1;   // 수정
         clothes3Txt.text=$"x{data_clothes3}";   //
         data_money-=price;
@@ -342,7 +342,7 @@ public class ShopDB : MonoBehaviour
     public void clothes4Clicked()
     {
         int price=600;   //
-        if(data_money>price) {
+        if(data_money>=price) {
         data_clothes4+=1;   // 수정
         clothes4Txt.text=$"x{data_clothes4}";   //
         data_money-=price;
