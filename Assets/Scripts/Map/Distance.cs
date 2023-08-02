@@ -19,6 +19,7 @@ public class Distance : MonoBehaviour
     private double myPrevLon = 0d;
     private double myPrevLat = 0d;
 
+    public int WalkDistance;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +55,8 @@ public class Distance : MonoBehaviour
                     totalDistance += currDistance;
                     //Debug.Log(currDistance);
                     distanceText.text = string.Format($"{Math.Round(totalDistance)}");
+
+                    WalkDistance = int.Parse(distanceText.text);
                     //Debug.Log("totalDistance : " + totalDistance);
                 }
                 
