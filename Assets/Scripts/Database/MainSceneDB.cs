@@ -161,7 +161,7 @@ public class MainSceneDB : MonoBehaviour
             depressionBar.value=data_depression;
             data_hunger=dataReader.GetInt32(6);
             hungerBar.value=data_hunger;
-            data_lastDistance=dataReader.GetInt32(20); //최근 걸었던거리
+            data_lastDistance = dataReader.GetInt32(20); //최근 걸었던거리
             walkBar.value=data_lastDistance;
 
             // clothes
