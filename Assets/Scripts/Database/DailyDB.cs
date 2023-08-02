@@ -168,31 +168,29 @@ public class DailyDB : MonoBehaviour
         FeedCountText.text = $"{data_FeedCount}/{PlayerPrefs.GetInt("three_SliderValue")}";
         LickCountText.text = $"{data_LikeCount}/{PlayerPrefs.GetInt("four_SliderValue")}";
         WalkDistanceText.text = $"{data_WalkDistance}/{PlayerPrefs.GetInt("five_SliderValue")}";
-
     }
 
     public void CehckingDaily()
     {
-        if (data_AttendCount >= Daily1Slider.maxValue)
-        {
-            DailyReward1.SetActive(true);
-        }
-        if (data_FeedCount >= Daily2Slider.maxValue)
-        {
-            DailyReward2.SetActive(true);
-        }
-        if (data_ShowerCount >= Daily3Slider.maxValue)
-        {
-            DailyReward3.SetActive(true);
-        }
-        if (data_LikeCount >= Daily4Slider.maxValue)
-        {
-            DailyReward4.SetActive(true);
-        }
-        if (data_WalkDistance >= Daily5Slider.maxValue)
-        {
-            DailyReward5.SetActive(true);
-        }
+        if (data_AttendCount >= Daily1Slider.maxValue) DailyReward1.SetActive(true);
+        else
+            DailyReward1.SetActive(false);
+
+        if (data_FeedCount >= Daily2Slider.maxValue) DailyReward2.SetActive(true);
+        else
+            DailyReward2.SetActive(false);
+
+        if (data_ShowerCount >= Daily3Slider.maxValue) DailyReward3.SetActive(true);
+        else
+            DailyReward3.SetActive(false);
+
+        if (data_LikeCount >= Daily4Slider.maxValue) DailyReward4.SetActive(true);
+        else
+            DailyReward4.SetActive(false);
+
+        if (data_WalkDistance >= Daily5Slider.maxValue) DailyReward5.SetActive(true);
+        else
+            DailyReward5.SetActive(false);
     }
 
 
@@ -273,12 +271,12 @@ public class DailyDB : MonoBehaviour
         Reward3_Scale = (int)Daily3Slider.maxValue;
         Reward4_Scale = (int)Daily4Slider.maxValue;
         Reward5_Scale = (int)Daily5Slider.maxValue;
+
         Daily1Slider.maxValue = Reward1_Scale;
         Daily2Slider.maxValue = Reward2_Scale;
         Daily3Slider.maxValue = Reward3_Scale;
         Daily4Slider.maxValue = Reward4_Scale;
         Daily5Slider.maxValue = Reward5_Scale;
-
     }
     public void Rewarded(GameObject RewardObj)
     {
@@ -302,7 +300,7 @@ public class DailyDB : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("one_SliderValue"))
         {
-            Daily1Slider.maxValue = PlayerPrefs.GetInt("One_SliderValue");
+            Daily1Slider.maxValue = PlayerPrefs.GetInt("one_SliderValue");
         }
         else
         {

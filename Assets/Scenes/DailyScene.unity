@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1287626}
   - component: {fileID: 1287627}
+  - component: {fileID: 1287628}
   m_Layer: 5
   m_Name: Daily2Slider
   m_TagString: Untagged
@@ -213,6 +214,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1287628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb62eee796f82184ebf85cad8a617e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slide: {fileID: 1287627}
 --- !u!1 &90329261
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +898,7 @@ GameObject:
   m_Component:
   - component: {fileID: 385240900}
   - component: {fileID: 385240901}
+  - component: {fileID: 385240902}
   m_Layer: 5
   m_Name: Daily5Slider
   m_TagString: Untagged
@@ -964,6 +979,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &385240902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385240899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb62eee796f82184ebf85cad8a617e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slide: {fileID: 385240901}
 --- !u!1 &429125090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 531582967}
   - component: {fileID: 531582968}
+  - component: {fileID: 531582969}
   m_Layer: 5
   m_Name: Daily3Slider
   m_TagString: Untagged
@@ -1271,6 +1300,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &531582969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531582966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb62eee796f82184ebf85cad8a617e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slide: {fileID: 531582968}
 --- !u!1 &657240465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,7 +1424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7529412, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1741,6 +1783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 977543252}
   - component: {fileID: 977543253}
+  - component: {fileID: 977543254}
   m_Layer: 5
   m_Name: Daily1Slider
   m_TagString: Untagged
@@ -1821,6 +1864,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &977543254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977543251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb62eee796f82184ebf85cad8a617e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slide: {fileID: 977543253}
 --- !u!1 &1049097318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,7 +2108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7529412, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2964,6 +3020,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1554311624}
   - component: {fileID: 1554311625}
+  - component: {fileID: 1554311626}
   m_Layer: 5
   m_Name: Daily4Slider
   m_TagString: Untagged
@@ -3044,6 +3101,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1554311626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554311623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb62eee796f82184ebf85cad8a617e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slide: {fileID: 1554311625}
 --- !u!1 &1566516956
 GameObject:
   m_ObjectHideFlags: 0
@@ -3226,7 +3296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7529412, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3707,7 +3777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7529412, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4173,7 +4243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7529412, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
