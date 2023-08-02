@@ -33,6 +33,9 @@ public class MainSceneDB : MonoBehaviour
 
 
 
+
+
+
     //************** db **************
     string DBName = "test1.db";
     int userNum_one = 1;   // userNum is 1
@@ -209,6 +212,7 @@ public class MainSceneDB : MonoBehaviour
         DBInsert($"UPDATE dog SET likability={data_likability}");
     }
     // Update is called once per frame
+    
     void Update()
     {
         if (Time.frameCount % 1000 == 0) {
@@ -219,6 +223,7 @@ public class MainSceneDB : MonoBehaviour
             likabilityBar.value=data_likability;
             cleanlinessBar.value=data_cleanliness;
             hungerBar.value=data_hunger;
+
 
             DBInsert($"UPDATE dog SET likability={data_likability}, cleanliness={data_cleanliness}, hunger={data_hunger} ");
         }
