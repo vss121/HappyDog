@@ -26,6 +26,7 @@ public class CheckInput : MonoBehaviour
         {
             GameObject.Find("Database").GetComponent<SettingDB>().data_dogName = userinputName;
             GameObject.Find("Database").GetComponent<SettingDB>().DBFirstSettingSceneEscape();
+            SettingPlayerprefebs();
             scene.GotoFirstDepress();
         }
     }
@@ -33,5 +34,13 @@ public class CheckInput : MonoBehaviour
     public void BackBtn()
     {
         GameObject.Find("PopUpCanvus").transform.Find("Panel").gameObject.SetActive(false);
+    }
+    public void SettingPlayerprefebs()
+    {
+        PlayerPrefs.DeleteKey("one_SliderValue");
+        PlayerPrefs.DeleteKey("two_SliderValue");
+        PlayerPrefs.DeleteKey("three_SliderValue");
+        PlayerPrefs.DeleteKey("four_SliderValue");
+        PlayerPrefs.DeleteKey("five_SliderValue");
     }
 }
