@@ -56,6 +56,13 @@ public class DailyDB : MonoBehaviour
     public GameObject DailyReward5;
     Color RewardedColor;
 
+    //panel
+    public GameObject eventPanel1;
+    public GameObject eventPanel2;
+    public GameObject eventPanel3;
+    public GameObject eventPanel4;
+    public GameObject eventPanel5;
+    bool isPanelOn;
 
     private void Awake()
     {
@@ -67,6 +74,7 @@ public class DailyDB : MonoBehaviour
     {
         data_userNum = 1;
         RewardedColor = new Color(0, 255, 255);
+        isPanelOn=false;
     }
 
     private void Update()
@@ -343,5 +351,56 @@ public class DailyDB : MonoBehaviour
         {
             PlayerPrefs.SetInt("five_SliderValue", (int)Daily5Slider.maxValue);
         }
+    }
+
+    public void ShowPanel1()
+    {
+        if(!isPanelOn) {
+            Daily1Clicked();
+            eventPanel1.SetActive(true);
+            isPanelOn=true;
+        }
+    }
+        public void ShowPanel2()
+    {
+        if(!isPanelOn) {
+            Daily2Clicked();
+            eventPanel2.SetActive(true);
+            isPanelOn=true;
+        }
+    }
+        public void ShowPanel3()
+    {
+        if(!isPanelOn) {
+            Daily3Clicked();
+            eventPanel3.SetActive(true);
+            isPanelOn=true;
+        }
+    }
+        public void ShowPanel4()
+    {
+        if(!isPanelOn) {
+            Daily4Clicked();
+            eventPanel4.SetActive(true);
+            isPanelOn=true;
+        }
+    }
+        public void ShowPanel5()
+    {
+        if(!isPanelOn) {
+            Daily5Clicked();
+            eventPanel5.SetActive(true);
+            isPanelOn=true;
+        }
+    }
+
+    public void disablePanel()
+    {
+        eventPanel1.SetActive(false);
+        eventPanel2.SetActive(false);
+        eventPanel3.SetActive(false);
+        eventPanel4.SetActive(false);
+        eventPanel5.SetActive(false);
+        isPanelOn=false;
     }
 }
