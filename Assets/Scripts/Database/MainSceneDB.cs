@@ -24,6 +24,7 @@ public class MainSceneDB : MonoBehaviour
     public Slider cleanlinessBar;
     public Slider depressionBar;
     public Slider hungerBar;
+    public Slider walkBar;
     // clothes
     public GameObject clothes1Object;
     public GameObject clothes2Object;
@@ -54,6 +55,7 @@ public class MainSceneDB : MonoBehaviour
     int data_clothes2On;
     int data_clothes3On;
     int data_clothes4On;
+    int data_lastDistance; // 산책시작에 위치한 슬라이더바
 
     public int data_likeCount;
     int totalExpFromDb;
@@ -159,9 +161,11 @@ public class MainSceneDB : MonoBehaviour
             depressionBar.value=data_depression;
             data_hunger=dataReader.GetInt32(6);
             hungerBar.value=data_hunger;
+            data_lastDistance=dataReader.GetInt32(20); //최근 걸었던거리
+            walkBar.value=data_lastDistance;
 
             // clothes
-            data_clothes1On=dataReader.GetInt32(12);
+            data_clothes1On =dataReader.GetInt32(12);
             data_clothes2On=dataReader.GetInt32(13);
             data_clothes3On=dataReader.GetInt32(14);
             data_clothes4On=dataReader.GetInt32(15);
@@ -215,6 +219,7 @@ public class MainSceneDB : MonoBehaviour
             likabilityBar.value=data_likability;
             cleanlinessBar.value=data_cleanliness;
             hungerBar.value=data_hunger;
+
             DBInsert($"UPDATE dog SET likability={data_likability}, cleanliness={data_cleanliness}, hunger={data_hunger} ");
         }
         
