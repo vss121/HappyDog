@@ -24,7 +24,7 @@ public class Heartinstantiate : MonoBehaviour
 
     public Vector3 Pos;
     public string CoolTimeKey = "CoolTime";
-    public float CoolDuration = 60f;
+    public float CoolDuration = 30f;
 
     private void Start()
     {
@@ -40,9 +40,9 @@ public class Heartinstantiate : MonoBehaviour
             if (CoolEndTime > CurrentTime)
             {
                 float remainingTime = CoolEndTime - CurrentTime;
-                if (remainingTime >= 60f)
+                if (remainingTime >= 30f)
                 {
-                    remainingTime = 60f;
+                    remainingTime = 30f;
                 }
                 StartCoroutine(StartCool(remainingTime));
             }
@@ -124,7 +124,7 @@ public class Heartinstantiate : MonoBehaviour
         HeartCo.a = 0.5f;
         HeartImg.color = HeartCo;
         HeartBtn.enabled = false;
-        float filledTime = 60f - duration;
+        float filledTime = 30f - duration;
         while (filledTime <= duration)
         {
             yield return new WaitForFixedUpdate();
