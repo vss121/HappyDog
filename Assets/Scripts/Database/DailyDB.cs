@@ -304,7 +304,7 @@ public class DailyDB : MonoBehaviour
         data_TotalExp += exp;
         DBInsert($"UPDATE dog SET money={data_Money}, exp={data_TotalExp}");
         Debug.Log(data_Money + ",     " + data_TotalExp);
-    }
+    } 
 
     public void ComparePlayerPrefs()
     {
