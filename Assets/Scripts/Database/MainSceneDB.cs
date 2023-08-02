@@ -217,9 +217,9 @@ public class MainSceneDB : MonoBehaviour
     {
         if (Time.frameCount % 1000 == 0) {
             //Debug.Log("data_likability "+data_likability);
-            data_likability-=2;
-            data_cleanliness-=1;
-            data_hunger-=1;
+            data_likability -= 1;
+            data_cleanliness -= 2;
+            data_hunger -= 2;
             likabilityBar.value=data_likability;
             cleanlinessBar.value=data_cleanliness;
             hungerBar.value=data_hunger;
