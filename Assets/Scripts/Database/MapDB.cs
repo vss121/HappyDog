@@ -22,7 +22,7 @@ public class MapDB : MonoBehaviour
     int data_hunger;
     int data_money;
     int data_exp;
-    int data_walkDistance;
+    public int data_walkDistance;
     int data_collection;
     int data_lastDistance; // 산책 start를 위한 가장최근 산책거리 표시를위한것
 
@@ -142,7 +142,8 @@ public class MapDB : MonoBehaviour
             data_hunger=dataReader.GetInt32(6);    // hunger
             data_money=dataReader.GetInt32(8);    // money
             data_exp=dataReader.GetInt32(9);    // exp
-            data_collection=dataReader.GetInt32(11);    // collection
+            data_walkDistance = dataReader.GetInt32(10); // WalkDistance
+            data_collection =dataReader.GetInt32(11);    // collection
             data_lastDistance = dataReader.GetInt32(20);  //lastdistance
             Debug.Log("data_collection"+data_collection); 
         }
@@ -177,11 +178,13 @@ public class MapDB : MonoBehaviour
         // coll update : data_collection+1
         if(hasColl) data_collection+=1;
         // walk distance 나중에 수정
+
+        data_walkDistance += GameObject.Find("Canvas").GetComponent<Distance>().WalkDistance;
         Debug.Log($"INSERT INTO walk VALUES ({data_userNum}, {data_distance}, {data_time}, {data_date} )");
         DBInsert($"INSERT INTO walk VALUES ({data_userNum}, {data_distance}, {data_time}, {data_date} )");
 
-        Debug.Log($"UPDATE dog SET hunger={data_hunger}, cleanliness={data_cleanliness}, money={data_money+walkMoney}, exp={data_exp+walkExp}, collection={data_collection},lastDistance={data_distance} WHERE userNum={data_userNum}");
-        DBInsert($"UPDATE dog SET hunger={data_hunger}, cleanliness={data_cleanliness}, money={data_money+walkMoney}, exp={data_exp+walkExp}, collection={data_collection},lastDistance={data_distance} WHERE userNum={data_userNum}");
+        Debug.Log($"UPDATE dog SET hunger={data_hunger}, cleanliness={data_cleanliness}, money={data_money+walkMoney}, exp={data_exp+walkExp}, collection={data_collection},lastDistance={data_distance}, walkDistance={data_walkDistance} WHERE userNum={data_userNum}");
+        DBInsert($"UPDATE dog SET hunger={data_hunger}, cleanliness={data_cleanliness}, money={data_money+walkMoney}, exp={data_exp+walkExp}, collection={data_collection},lastDistance={data_distance}, walkDistance={data_walkDistance} WHERE userNum={data_userNum}");
 
     }
 

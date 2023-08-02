@@ -73,8 +73,7 @@ public class DailyDB : MonoBehaviour
     private void Start()
     {
         data_userNum = 1;
-        RewardedColor = new Color(0, 255, 255);
-        isPanelOn=false;
+        isPanelOn = false;
     }
 
     private void Update()
@@ -181,24 +180,19 @@ public class DailyDB : MonoBehaviour
     public void CehckingDaily()
     {
         if (data_AttendCount >= Daily1Slider.maxValue) DailyReward1.SetActive(true);
-        else
-            DailyReward1.SetActive(false);
+        else DailyReward1.SetActive(false);
 
         if (data_FeedCount >= Daily2Slider.maxValue) DailyReward2.SetActive(true);
-        else
-            DailyReward2.SetActive(false);
+        else DailyReward2.SetActive(false);
 
         if (data_ShowerCount >= Daily3Slider.maxValue) DailyReward3.SetActive(true);
-        else
-            DailyReward3.SetActive(false);
+        else DailyReward3.SetActive(false);
 
         if (data_LikeCount >= Daily4Slider.maxValue) DailyReward4.SetActive(true);
-        else
-            DailyReward4.SetActive(false);
+        else DailyReward4.SetActive(false);
 
         if (data_WalkDistance >= Daily5Slider.maxValue) DailyReward5.SetActive(true);
-        else
-            DailyReward5.SetActive(false);
+        else DailyReward5.SetActive(false);
     }
 
 
@@ -217,7 +211,6 @@ public class DailyDB : MonoBehaviour
         ConnectText.text = $"{data_AttendCount}/{Daily1Slider.maxValue}";
         Daily1Slider.value = data_AttendCount;
         PlayerPrefs.SetInt("one_SliderValue", (int)Daily1Slider.maxValue);
-        SettingDoneTextColor(ConnectText);
     }
     public void Daily2Clicked() // µ·
     {
@@ -229,7 +222,6 @@ public class DailyDB : MonoBehaviour
         FeedCountText.text = $"{data_FeedCount}/{Daily2Slider.maxValue}";
         Daily2Slider.value = data_FeedCount;
         PlayerPrefs.SetInt("two_SliderValue", (int)Daily2Slider.maxValue);
-        SettingDoneTextColor(FeedCountText);
     }
 
     public void Daily3Clicked() // µ·
@@ -241,7 +233,6 @@ public class DailyDB : MonoBehaviour
         ShowerCountText.text = $"{data_ShowerCount}/{Daily3Slider.maxValue}";
         Daily3Slider.value = data_ShowerCount;
         PlayerPrefs.SetInt("three_SliderValue", (int)Daily3Slider.maxValue);
-        SettingDoneTextColor(ShowerCountText);
     }
     public void Daily4Clicked() // µ· + °æÇèÄ¡
     {
@@ -252,7 +243,6 @@ public class DailyDB : MonoBehaviour
         LickCountText.text = $"{data_LikeCount}/{Daily4Slider.maxValue}";
         Daily4Slider.value = data_LikeCount;
         PlayerPrefs.SetInt("four_SliderValue", (int)Daily4Slider.maxValue);
-        SettingDoneTextColor(LickCountText);
     }
     public void Daily5Clicked() // °æÇèÄ¡ + µ·
     {
@@ -263,7 +253,6 @@ public class DailyDB : MonoBehaviour
         WalkDistanceText.text = $"{data_WalkDistance}/{Daily5Slider.maxValue}";
         Daily5Slider.value = data_WalkDistance;
         PlayerPrefs.SetInt("five_SliderValue", (int)Daily5Slider.maxValue);
-        SettingDoneTextColor(WalkDistanceText);
     }
 
     public void SettingDefalut()
@@ -291,106 +280,75 @@ public class DailyDB : MonoBehaviour
         // º¸»ó ¾È³» ÆË¾÷Ã¢ ¶ç¿ì±â
         RewardObj.SetActive(false);
     }
-
-    public void SettingDoneTextColor(TMP_Text text)
-    {
-        text.color = RewardedColor;
-    }
     public void GiveReward(int money = 0, int exp = 0)
     {
         data_Money += money;
         data_TotalExp += exp;
         DBInsert($"UPDATE dog SET money={data_Money}, exp={data_TotalExp}");
         Debug.Log(data_Money + ",     " + data_TotalExp);
-    } 
+    }
 
     public void ComparePlayerPrefs()
     {
-        if (PlayerPrefs.HasKey("one_SliderValue"))
-        {
-            Daily1Slider.maxValue = PlayerPrefs.GetInt("one_SliderValue");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("one_SliderValue", (int)Daily1Slider.maxValue);
-        }
+        if (PlayerPrefs.HasKey("one_SliderValue")) Daily1Slider.maxValue = PlayerPrefs.GetInt("one_SliderValue");
+        else PlayerPrefs.SetInt("one_SliderValue", (int)Daily1Slider.maxValue);
 
-        if (PlayerPrefs.HasKey("two_SliderValue"))
-        {
-            Daily2Slider.maxValue = PlayerPrefs.GetInt("two_SliderValue");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("two_SliderValue", (int)Daily2Slider.maxValue);
-        }
+        if (PlayerPrefs.HasKey("two_SliderValue")) Daily2Slider.maxValue = PlayerPrefs.GetInt("two_SliderValue");
+        else PlayerPrefs.SetInt("two_SliderValue", (int)Daily2Slider.maxValue);
 
-        if (PlayerPrefs.HasKey("three_SliderValue"))
-        {
-            Daily3Slider.maxValue = PlayerPrefs.GetInt("three_SliderValue");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("three_SliderValue", (int)Daily3Slider.maxValue);
-            Daily3Slider.maxValue = PlayerPrefs.GetInt("three_SliderValue");
-        }
+        if (PlayerPrefs.HasKey("three_SliderValue")) Daily3Slider.maxValue = PlayerPrefs.GetInt("three_SliderValue");
+        else PlayerPrefs.SetInt("three_SliderValue", (int)Daily3Slider.maxValue);
 
-        if (PlayerPrefs.HasKey("four_SliderValue"))
-        {
-            Daily4Slider.maxValue = PlayerPrefs.GetInt("four_SliderValue");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("four_SliderValue", (int)Daily4Slider.maxValue);
-        }
+        if (PlayerPrefs.HasKey("four_SliderValue")) Daily4Slider.maxValue = PlayerPrefs.GetInt("four_SliderValue");
+        else PlayerPrefs.SetInt("four_SliderValue", (int)Daily4Slider.maxValue);
 
-        if (PlayerPrefs.HasKey("five_SliderValue"))
-        {
-            Daily5Slider.maxValue = PlayerPrefs.GetInt("five_SliderValue");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("five_SliderValue", (int)Daily5Slider.maxValue);
-        }
+        if (PlayerPrefs.HasKey("five_SliderValue")) Daily5Slider.maxValue = PlayerPrefs.GetInt("five_SliderValue");
+        else PlayerPrefs.SetInt("five_SliderValue", (int)Daily5Slider.maxValue);
     }
 
     public void ShowPanel1()
     {
-        if(!isPanelOn) {
+        if (!isPanelOn)
+        {
             Daily1Clicked();
             eventPanel1.SetActive(true);
-            isPanelOn=true;
+            isPanelOn = true;
         }
     }
-        public void ShowPanel2()
+    public void ShowPanel2()
     {
-        if(!isPanelOn) {
+        if (!isPanelOn)
+        {
             Daily2Clicked();
             eventPanel2.SetActive(true);
-            isPanelOn=true;
+            isPanelOn = true;
         }
     }
-        public void ShowPanel3()
+    public void ShowPanel3()
     {
-        if(!isPanelOn) {
+        if (!isPanelOn)
+        {
             Daily3Clicked();
             eventPanel3.SetActive(true);
-            isPanelOn=true;
+            isPanelOn = true;
         }
     }
-        public void ShowPanel4()
+    public void ShowPanel4()
     {
-        if(!isPanelOn) {
+        if (!isPanelOn)
+        {
             Daily4Clicked();
             eventPanel4.SetActive(true);
-            isPanelOn=true;
+            isPanelOn = true;
         }
     }
-        public void ShowPanel5()
+    public void ShowPanel5()
     {
-        if(!isPanelOn) {
+        if (!isPanelOn)
+        {
             Daily5Clicked();
             eventPanel5.SetActive(true);
-            isPanelOn=true;
+            isPanelOn = true;
         }
     }
 
@@ -401,6 +359,6 @@ public class DailyDB : MonoBehaviour
         eventPanel3.SetActive(false);
         eventPanel4.SetActive(false);
         eventPanel5.SetActive(false);
-        isPanelOn=false;
+        isPanelOn = false;
     }
 }
