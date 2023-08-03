@@ -40,9 +40,10 @@ public class Heartinstantiate : MonoBehaviour
             if (CoolEndTime > CurrentTime)
             {
                 float remainingTime = CoolEndTime - CurrentTime;
+                Debug.Log(remainingTime);
                 if (remainingTime >= 30f)
                 {
-                    remainingTime = 30f;
+                    remainingTime = CoolEndTime;
                 }
                 StartCoroutine(StartCool(remainingTime));
             }
@@ -65,8 +66,12 @@ public class Heartinstantiate : MonoBehaviour
         if (!IsCoolTimeRunning())
         {
             float CoolEndTime = Time.time + CoolDuration;
+            if (CoolEndTime >= 30f)
+            {
+                CoolEndTime = 30f;
+            }
             PlayerPrefs.SetFloat(CoolTimeKey, CoolEndTime);
-            StartCoroutine(StartCool(CoolDuration));
+            StartCoroutine(StartCool(PlayerPrefs.GetFloat(CoolTimeKey)));
         }
     }
     public bool IsCoolTimeRunning()
