@@ -18,7 +18,11 @@ public class dog1 : MonoBehaviour
     public GameObject n2;
     public GameObject n4;
 
-    private void Awake()
+    private void Update()
+    {
+        Checking();
+    }
+    public void Checking()
     {
         MainSceneDB = GameObject.Find("Database").GetComponent<MainSceneDB>();
         MainSceneDB.DBMainSceneInitialize();
@@ -45,7 +49,7 @@ public class dog1 : MonoBehaviour
             Second.SetActive(true);
             n4.SetActive(true);
         }
-        else 
+        else
         {
             First.SetActive(true);
             Second.SetActive(false);
