@@ -854,18 +854,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _map: {fileID: 1411663281}
   _locationStrings:
-  - 60.19184000,24.96854000
-  - 36.6251,127.4571
-  - 36.624,127.4593
-  - 36.624,127.4593
-  - 36.626,127.4591
-  - 36.626,127.4591
-  - 36.6265,127.4521
-  - 36.6265,127.4521
-  - 36.6258,127.4549
-  - 36.6309, 127.4546
-  - 36.6317,127.4571
-  - 36.628,127.4582
+  - 48.2657,11.6726
+  - 48.2651,11.6721
+  - 48.2665,11.6716
+  - 48.1571,11.5039
+  - 48.1499,11.5908
+  - 48.1428,11.5800
+  - 48.1410,11.5624
+  - 48.2494,11.6528
+  - 48.2647,11.6711
   _spawnScale: 1
   _markerPrefab: {fileID: 30427260164093571, guid: 414e8da994305fe45ba3b91f7781c519, type: 3}
 --- !u!4 &414482217
@@ -4072,6 +4069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceText: {fileID: 1681190047}
+  WalkDistance: 0
 --- !u!114 &1304608542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4971,6 +4969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e32f9009d60aa24984ad720f610ad5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data_walkDistance: 0
   quoteText: {fileID: 532440564}
   moneyText: {fileID: 1161466651}
   expText: {fileID: 781305353}
