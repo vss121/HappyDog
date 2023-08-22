@@ -9,7 +9,7 @@
 - 독일 현장교육 : 2023.08.13(일) ~ 08.20(일) 1주 (독일 뮌헨,  Science congress center Munich)    
 
 
-<img src="https://img.shields.io/badge/unity-FFFFFF?style=for-the-badge&logo=unity&logoColor=white"><img src="https://img.shields.io/badge/android-3DDC84?style=for-the-badge&logo=android&logoColor=white"><img src="https://img.shields.io/badge/mapbox-000000?style=for-the-badge&logo=mapbox&logoColor=white"><img src="https://img.shields.io/badge/sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white"><img src="https://img.shields.io/badge/csharp-239120?style=for-the-badge&logo=csharp&logoColor=white">
+<img src="https://img.shields.io/badge/unity-FFFFFF?style=for-the-badge&logo=unity&logoColor=black"><img src="https://img.shields.io/badge/android-3DDC84?style=for-the-badge&logo=android&logoColor=white"><img src="https://img.shields.io/badge/mapbox-000000?style=for-the-badge&logo=mapbox&logoColor=white"><img src="https://img.shields.io/badge/sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white"><img src="https://img.shields.io/badge/csharp-239120?style=for-the-badge&logo=csharp&logoColor=white">
 
   
 
@@ -36,11 +36,11 @@ Poster
 depressive disorder, digital therapeutics, artificial intelligence, chatgpt, virtual dog
 
 ### References
-[1] Juri Kim, Mikyoung Lee. (2022). A Systematic Review and Meta-Analysis of Interventions for the Relief of Depression in the COVID-19 Pandemic . Crisisonomy, 18(5), 29-38.
-[2] Kim, J., Park, sang-mahn and Kim, gang-hoon (2017) “A Study of Causal Loop Analysis for Suicide Protection of Korean Society: focusing on the adolescent,” Korean System Dynamics Review. Korean System Dynamics Society.
-[3] Choi Myugmin, Kim Doeyoon, Kim Kaduc. (2015). “An Study of Psychological Autopsy of Suicides in Korean Rural Area”. Korean Social Welfare, Vol. 67, No. 1: 58-59.
-[4] Heo, Jeong Sun. (2019) "Effect and Mechanism Verification of Behavioral Activation Therapy for Depression." Doctoral dissertation, Graduate School of Chung-Ang University, Seoul, 13, 34.
-[5] Seo, Soo Yeon. (2023), "User Study for the Design and Development of Senior-targeted Pet Rearing Simulation," Research Professor, Inje University 4th Stage BK21 Healthcare 4C Design Education & Research Group. 7
+[1] Juri Kim, Mikyoung Lee. (2022). A Systematic Review and Meta-Analysis of Interventions for the Relief of Depression in the COVID-19 Pandemic . Crisisonomy, 18(5), 29-38.  
+[2] Kim, J., Park, sang-mahn and Kim, gang-hoon (2017) “A Study of Causal Loop Analysis for Suicide Protection of Korean Society: focusing on the adolescent,” Korean System Dynamics Review. Korean System Dynamics Society.  
+[3] Choi Myugmin, Kim Doeyoon, Kim Kaduc. (2015). “An Study of Psychological Autopsy of Suicides in Korean Rural Area”. Korean Social Welfare, Vol. 67, No. 1: 58-59.   
+[4] Heo, Jeong Sun. (2019) "Effect and Mechanism Verification of Behavioral Activation Therapy for Depression." Doctoral dissertation, Graduate School of Chung-Ang University, Seoul, 13, 34.  
+[5] Seo, Soo Yeon. (2023), "User Study for the Design and Development of Senior-targeted Pet Rearing Simulation," Research Professor, Inje University 4th Stage BK21 Healthcare 4C Design Education & Research Group. 7  
 
 ## 
 
