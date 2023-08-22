@@ -31,6 +31,7 @@ During the initial game setup or when the virtual dog reaches certain levels, re
 
 ### Track
 Poster
+![./EKC2023-Poster.jpg](./EKC2023-Poster.jpg)
 
 ### Keywords
 depressive disorder, digital therapeutics, artificial intelligence, chatgpt, virtual dog
